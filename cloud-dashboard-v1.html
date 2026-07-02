@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Hiring — Status Semanal | Sankhya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0B1F35 0%, #1a2f4a 100%);
+            color: #fff;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid rgba(0, 169, 157, 0.3);
+            padding-bottom: 1.5rem;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #b0b8c1;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge.priority {
+            background: rgba(255, 87, 51, 0.15);
+            color: #FF5733;
+        }
+
+        .badge.momentum {
+            background: rgba(0, 169, 157, 0.15);
+            color: #00A99D;
+        }
+
+        .badge.health {
+            background: rgba(76, 175, 80, 0.15);
+            color: #4CAF50;
+        }
+
+        /* Snapshot */
+        .snapshot {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #00A99D;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .snapshot h2 {
+            font-size: 1rem;
+            color: #00A99D;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .snapshot-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .snapshot-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .snapshot-item strong {
+            color: #fff;
+            min-width: 120px;
+        }
+
+        .snapshot-item span {
+            color: #b0b8c1;
+            flex: 1;
+        }
+
+        /* Main grid sections */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(0, 169, 157, 0.2);
+        }
+
+        /* Posições Grid */
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .position-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 169, 157, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .position-card:hover {
+            border-color: rgba(0, 169, 157, 0.5);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .position-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .health-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .health-indicator.green {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+        }
+
+        .health-indicator.yellow {
+            background: rgba(255, 193, 7, 0.2);
+            color: #FFC107;
+        }
+
+        .health-indicator.red {
+            background: rgba(255, 87, 51, 0.2);
+            color: #FF5733;
+        }
+
+        .position-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(0, 169, 157, 0.1);
+            border-bottom: 1px solid rgba(0, 169, 157, 0.1);
+        }
+
+        .meta-item {
+            font-size: 0.85rem;
+        }
+
+        .meta-label {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .meta-value {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Próximos passos */
+        .actions-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .action-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 169, 157, 0.15);
+            border-radius: 8px;
+            padding: 1.2rem;
+            display: grid;
+            grid-template-columns: 30px 1fr auto;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .action-checkbox {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 2px solid #00A99D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00A99D;
+            font-weight: bold;
+        }
+
+        .action-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .action-description {
+            font-weight: 500;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .action-meta-info {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .action-meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .action-status {
+            text-align: right;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            background: rgba(0, 169, 157, 0.2);
+            color: #00A99D;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Last updated */
+        .last-updated {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 169, 157, 0.2);
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .snapshot-items {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .positions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>🚀 Cloud Hiring — Status Semanal</h1>
+                    <div class="header-meta" id="headerDate"></div>
+                </div>
+                <div class="header-meta">
+                    <div class="badge priority">
+                        <span>⭐⭐⭐</span> Prioridade Alta
+                    </div>
+                    <div class="badge momentum">
+                        <span>↗️</span> Momentum: Em aceleração
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Snapshot -->
+        <section class="snapshot">
+            <h2>Visão Executiva</h2>
+            <div class="snapshot-items">
+                <div class="snapshot-item">
+                    <strong>Status geral:</strong>
+                    <span>3 vagas abertas | Processos em andamento | Equipe: Natalia, Vitória, Ketlin</span>
+                </div>
+                <div class="snapshot-item">
+                    <strong>Timeline:</strong>
+                    <span>DBA Specialist: entrevista técnica em andamento | Dev Java II: recalibragem em progresso | Infra Cloud II: alinhamento segunda-feira</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Posições -->
+        <section class="section">
+            <h2 class="section-title">📋 Posições — Status Detalhado</h2>
+            <div class="positions-grid" id="positionsGrid">
+                <!-- Posições carregadas via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Próximos passos -->
+        <section class="section">
+            <h2 class="section-title">✓ Próximos Passos (Esta semana)</h2>
+            <div class="actions-list" id="actionsList">
+                <!-- Ações carregadas via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Last updated -->
+        <div class="last-updated" id="lastUpdated">
+            Última atualização: Carregando...
+        </div>
+    </div>
+
+    <script>
+        // Dados estruturados — Semana 02/07/2026
+        const dashboardData = {
+            lastUpdated: "02 de julho de 2026 | Semana de 29/06 a 03/07",
+            positions: [
+                {
+                    title: "5775 — Especialista de Banco de Dados",
+                    owner: "@Natalia Kelly Aguiar",
+                    stage: "Entrevista técnica",
+                    health: "yellow",
+                    action: "Em andamento"
+                },
+                {
+                    title: "5741 — Dev Java Pleno (Platform Engineering)",
+                    owner: "@Vitória Carolina Buso Richil Nascimento",
+                    stage: "Recalibragem de perfis + Novas entrevistas Talent",
+                    health: "yellow",
+                    action: "Mapeamento em progresso"
+                },
+                {
+                    title: "5774 — Analista de Infraestrutura Cloud II",
+                    owner: "@Ketlin Sales Pereira",
+                    stage: "Alinhamento",
+                    health: "green",
+                    action: "Briefing segunda-feira"
+                }
+            ],
+            actions: [
+                {
+                    description: "DBA Specialist — Conclusão da entrevista técnica",
+                    owner: "Natalia",
+                    timeline: "Esta semana",
+                    status: "em andamento"
+                },
+                {
+                    description: "Dev Java II — Continuação de mapeamento de candidatos",
+                    owner: "Vitória",
+                    timeline: "Esta semana",
+                    status: "em andamento"
+                },
+                {
+                    description: "Infra Cloud II — Alinhamento interno para divulgação",
+                    owner: "Ketlin",
+                    timeline: "Segunda-feira",
+                    status: "agendado"
+                }
+            ]
+        };
+
+        // Render positions
+        function renderPositions() {
+            const grid = document.getElementById('positionsGrid');
+            grid.innerHTML = dashboardData.positions.map(pos => `
+                <div class="position-card">
+                    <div class="position-header">
+                        <div class="position-title">${pos.title}</div>
+                        <div class="health-indicator ${pos.health}">
+                            ${pos.health === 'green' ? '🟢 No caminho' : '🟡 Em aceleração'}
+                        </div>
+                    </div>
+                    <div class="position-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Owner</div>
+                            <div class="meta-value">${pos.owner}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Estágio</div>
+                            <div class="meta-value">${pos.stage}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Ação</div>
+                            <div class="meta-value">${pos.action}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render actions
+        function renderActions() {
+            const list = document.getElementById('actionsList');
+            list.innerHTML = dashboardData.actions.map(action => `
+                <div class="action-item">
+                    <div class="action-checkbox"></div>
+                    <div class="action-content">
+                        <div class="action-description">${action.description}</div>
+                        <div class="action-meta-info">
+                            <span>👤 ${action.owner}</span>
+                            <span>⏰ ${action.timeline}</span>
+                            <span>📌 ${action.status}</span>
+                        </div>
+                    </div>
+                    <div class="action-status">
+                        <div class="status-badge">${action.status}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render date
+        function renderDate() {
+            const dateDiv = document.getElementById('headerDate');
+            dateDiv.innerHTML = `<span>${dashboardData.lastUpdated}</span>`;
+            document.getElementById('lastUpdated').textContent = `Última atualização: ${dashboardData.lastUpdated} | Próxima: Toda terça-feira às 9h`;
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            renderPositions();
+            renderActions();
+            renderDate();
+        });
+    </script>
+</body>
+</html>
