@@ -76,7 +76,20 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .card-name-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .card-stage {
+            font-size: 0.82rem;
+            color: #8a9bb0;
             margin-bottom: 1rem;
         }
 
@@ -248,10 +261,12 @@
         <div class="card yellow">
             <div class="card-top">
                 <span class="card-number">#5775</span>
-                <span class="card-name">DBA Specialist</span>
-                <span class="badge yellow">🟡 Em andamento</span>
-                <span class="card-stage">Entrevista técnica</span>
+                <div class="card-name-group">
+                    <span class="card-name">DBA Specialist</span>
+                    <span class="badge yellow">🟡 Em andamento</span>
+                </div>
             </div>
+            <div class="card-stage">Entrevista técnica</div>
             <div class="card-people">
                 <span class="card-owner">👤 Recrutadora: Nat</span>
                 <span class="card-owner">🏢 Líder: Charles</span>
@@ -280,10 +295,12 @@
         <div class="card yellow">
             <div class="card-top">
                 <span class="card-number">#5741</span>
-                <span class="card-name">Dev Java Pleno</span>
-                <span class="badge yellow">🟡 Em andamento</span>
-                <span class="card-stage">Entrevistas Talent</span>
+                <div class="card-name-group">
+                    <span class="card-name">Dev Java Pleno</span>
+                    <span class="badge yellow">🟡 Em andamento</span>
+                </div>
             </div>
+            <div class="card-stage">Entrevistas Talent</div>
             <div class="card-people">
                 <span class="card-owner">👤 Recrutadora: Vitória</span>
                 <span class="card-owner">🏢 Líder: Wender</span>
@@ -312,10 +329,12 @@
         <div class="card green">
             <div class="card-top">
                 <span class="card-number">#5774</span>
-                <span class="card-name">Analista de Infraestrutura Cloud II</span>
-                <span class="badge green">🟢 No caminho</span>
-                <span class="card-stage">Alinhamento de perfil</span>
+                <div class="card-name-group">
+                    <span class="card-name">Analista de Infraestrutura Cloud II</span>
+                    <span class="badge green">🟢 No caminho</span>
+                </div>
             </div>
+            <div class="card-stage">Alinhamento de perfil</div>
             <div class="card-people">
                 <span class="card-owner">👤 Recrutadora: Ketlin</span>
                 <span class="card-owner">🏢 Líder: Charles</span>
