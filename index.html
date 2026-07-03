@@ -99,8 +99,24 @@
 
         .card-stage { font-size: 0.82rem; color: #8a9bb0; }
 
+        .card-number {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #00A99D;
+            background: rgba(0, 169, 157, 0.12);
+            padding: 2px 7px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .card-people {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
         .card-owner {
-            margin-left: auto;
             font-size: 0.82rem;
             color: #8a9bb0;
         }
@@ -231,10 +247,14 @@
         <!-- Card 1: DBA -->
         <div class="card yellow">
             <div class="card-top">
+                <span class="card-number">#5775</span>
                 <span class="card-name">DBA Specialist</span>
                 <span class="badge yellow">🟡 Em andamento</span>
                 <span class="card-stage">Entrevista técnica</span>
-                <span class="card-owner">👤 Nat</span>
+            </div>
+            <div class="card-people">
+                <span class="card-owner">👤 Recrutadora: Nat</span>
+                <span class="card-owner">🏢 Líder: Charles</span>
             </div>
             <hr class="card-divider">
             <div class="card-rows">
@@ -259,10 +279,14 @@
         <!-- Card 2: Dev Java -->
         <div class="card yellow">
             <div class="card-top">
+                <span class="card-number">#5741</span>
                 <span class="card-name">Dev Java Pleno</span>
                 <span class="badge yellow">🟡 Em andamento</span>
                 <span class="card-stage">Entrevistas Talent</span>
-                <span class="card-owner">👤 Vitória</span>
+            </div>
+            <div class="card-people">
+                <span class="card-owner">👤 Recrutadora: Vitória</span>
+                <span class="card-owner">🏢 Líder: Wender</span>
             </div>
             <hr class="card-divider">
             <div class="card-rows">
@@ -287,10 +311,14 @@
         <!-- Card 3: Infra Cloud -->
         <div class="card green">
             <div class="card-top">
+                <span class="card-number">#5774</span>
                 <span class="card-name">Analista de Infraestrutura Cloud II</span>
                 <span class="badge green">🟢 No caminho</span>
                 <span class="card-stage">Alinhamento de perfil</span>
-                <span class="card-owner">👤 Ketlin</span>
+            </div>
+            <div class="card-people">
+                <span class="card-owner">👤 Recrutadora: Ketlin</span>
+                <span class="card-owner">🏢 Líder: Charles</span>
             </div>
             <hr class="card-divider">
             <div class="card-rows">
