@@ -71,26 +71,25 @@
         .card.yellow { border-left-color: #FFC107; }
         .card.red    { border-left-color: #f44336; }
 
-        /* Card top row */
-        .card-top {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 4px;
-        }
+        /* Card header */
+        .card-header { margin-bottom: 0.75rem; }
 
-        .card-name-group {
+        .card-row1 {
             display: flex;
             align-items: center;
             gap: 8px;
-            flex-wrap: wrap;
-            flex: 1;
+            margin-bottom: 6px;
+        }
+
+        .card-row2 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .card-stage {
             font-size: 0.82rem;
             color: #8a9bb0;
-            margin-bottom: 1rem;
         }
 
         .card-name {
@@ -259,14 +258,16 @@
 
         <!-- Card 1: DBA -->
         <div class="card yellow">
-            <div class="card-top">
-                <span class="card-number">#5775</span>
-                <div class="card-name-group">
+            <div class="card-header">
+                <div class="card-row1">
+                    <span class="card-number">#5775</span>
                     <span class="card-name">DBA Specialist</span>
+                </div>
+                <div class="card-row2">
                     <span class="badge yellow">🟡 Em andamento</span>
+                    <span class="card-stage">Entrevista técnica</span>
                 </div>
             </div>
-            <div class="card-stage">Entrevista técnica</div>
             <div class="card-people">
                 <span class="card-owner">👤 Recrutadora: Nat</span>
                 <span class="card-owner">🏢 Líder: Charles</span>
@@ -293,14 +294,16 @@
 
         <!-- Card 2: Dev Java -->
         <div class="card yellow">
-            <div class="card-top">
-                <span class="card-number">#5741</span>
-                <div class="card-name-group">
+            <div class="card-header">
+                <div class="card-row1">
+                    <span class="card-number">#5741</span>
                     <span class="card-name">Dev Java Pleno</span>
+                </div>
+                <div class="card-row2">
                     <span class="badge yellow">🟡 Em andamento</span>
+                    <span class="card-stage">Entrevistas Talent</span>
                 </div>
             </div>
-            <div class="card-stage">Entrevistas Talent</div>
             <div class="card-people">
                 <span class="card-owner">👤 Recrutadora: Vitória</span>
                 <span class="card-owner">🏢 Líder: Wender</span>
@@ -327,17 +330,39 @@
 
         <!-- Card 3: Infra Cloud -->
         <div class="card green">
-            <div class="card-top">
-                <span class="card-number">#5774</span>
-                <div class="card-name-group">
+            <div class="card-header">
+                <div class="card-row1">
+                    <span class="card-number">#5774</span>
                     <span class="card-name">Analista de Infraestrutura Cloud II</span>
+                </div>
+                <div class="card-row2">
                     <span class="badge green">🟢 No caminho</span>
+                    <span class="card-stage">Alinhamento de perfil</span>
                 </div>
             </div>
-            <div class="card-stage">Alinhamento de perfil</div>
             <div class="card-people">
                 <span class="card-owner">👤 Recrutadora: Ketlin</span>
                 <span class="card-owner">🏢 Líder: Charles</span>
+            </div>
+            <hr class="card-divider">
+            <div class="card-rows">
+                <div class="card-row">
+                    <span class="row-icon">👥</span>
+                    <span class="row-label">Pipeline:</span>
+                    <span class="row-value">3 mapeados | sourcing iniciando</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">➡</span>
+                    <span class="row-label">Próximo passo:</span>
+                    <span class="row-value">Agendar alinhamento com liderança e iniciar sourcing</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">⚠</span>
+                    <span class="row-label">Risco:</span>
+                    <span class="row-value warning">Em validação de orçamento para alteração de posição de junior para pleno</span>
+                </div>
+            </div>
+        </div>
             </div>
             <hr class="card-divider">
             <div class="card-rows">
