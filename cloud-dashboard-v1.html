@@ -6,11 +6,7 @@
     <title>Cloud Hiring — Status Semanal | Sankhya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,479 +16,247 @@
             min-height: 100vh;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .container { max-width: 860px; margin: 0 auto; }
 
+        /* Header */
         header {
-            margin-bottom: 2.5rem;
-            border-bottom: 2px solid rgba(0, 169, 157, 0.3);
+            margin-bottom: 2rem;
             padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 169, 157, 0.25);
         }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 2rem;
-            flex-wrap: wrap;
+        .header-label {
+            font-size: 0.75rem;
+            color: #00A99D;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .header-meta {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-            color: #b0b8c1;
-            align-items: center;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .badge.priority {
-            background: rgba(255, 87, 51, 0.15);
-            color: #FF5733;
-        }
-
-        .badge.momentum {
-            background: rgba(0, 169, 157, 0.15);
-            color: #00A99D;
-        }
-
-        .badge.health {
-            background: rgba(76, 175, 80, 0.15);
-            color: #4CAF50;
-        }
-
-        /* Snapshot */
-        .snapshot {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid #00A99D;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .snapshot h2 {
-            font-size: 1rem;
-            color: #00A99D;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .snapshot-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .snapshot-item {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .snapshot-item strong {
-            color: #fff;
-            min-width: 120px;
-        }
-
-        .snapshot-item span {
-            color: #b0b8c1;
-            flex: 1;
-        }
-
-        /* Main grid sections */
-        .section {
-            margin-bottom: 2.5rem;
-        }
-
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 1px solid rgba(0, 169, 157, 0.2);
-        }
-
-        /* Posições Grid */
-        .positions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .position-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(0, 169, 157, 0.2);
-            border-radius: 8px;
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .position-card:hover {
-            border-color: rgba(0, 169, 157, 0.5);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .position-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            gap: 1rem;
-        }
-
-        .position-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .health-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.3rem 0.7rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .health-indicator.green {
-            background: rgba(76, 175, 80, 0.2);
-            color: #4CAF50;
-        }
-
-        .health-indicator.yellow {
-            background: rgba(255, 193, 7, 0.2);
-            color: #FFC107;
-        }
-
-        .health-indicator.red {
-            background: rgba(255, 87, 51, 0.2);
-            color: #FF5733;
-        }
-
-        .position-meta {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 1rem 0;
-            border-top: 1px solid rgba(0, 169, 157, 0.1);
-            border-bottom: 1px solid rgba(0, 169, 157, 0.1);
-        }
-
-        .meta-item {
-            font-size: 0.85rem;
-        }
-
-        .meta-label {
-            color: #888;
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            letter-spacing: 0.5px;
             margin-bottom: 0.3rem;
         }
 
-        .meta-value {
-            color: #fff;
+        .header-period {
+            font-size: 0.9rem;
+            color: #8a9bb0;
+        }
+
+        /* Section title */
+        .section-label {
+            font-size: 0.7rem;
             font-weight: 600;
-            font-size: 0.95rem;
+            color: #8a9bb0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
         }
 
-        /* Próximos passos */
-        .actions-list {
-            display: grid;
-            gap: 1rem;
+        /* Position cards */
+        .positions { display: grid; gap: 12px; margin-bottom: 2.5rem; }
+
+        .card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            border-left: 3px solid transparent;
         }
 
-        .action-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 169, 157, 0.15);
-            border-radius: 8px;
-            padding: 1.2rem;
-            display: grid;
-            grid-template-columns: 30px 1fr auto;
-            gap: 1rem;
+        .card.green  { border-left-color: #4CAF50; }
+        .card.yellow { border-left-color: #FFC107; }
+        .card.red    { border-left-color: #f44336; }
+
+        /* Card top row */
+        .card-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .badge {
+            padding: 3px 9px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge.green  { background: rgba(76, 175, 80, 0.18);  color: #66BB6A; }
+        .badge.yellow { background: rgba(255, 193, 7, 0.18);  color: #FFCA28; }
+        .badge.red    { background: rgba(244, 67, 54, 0.18);  color: #EF5350; }
+
+        .card-stage { font-size: 0.82rem; color: #8a9bb0; }
+
+        .card-owner {
+            margin-left: auto;
+            font-size: 0.82rem;
+            color: #8a9bb0;
+        }
+
+        /* Card rows */
+        .card-rows { display: grid; gap: 8px; }
+
+        .card-row {
+            display: flex;
             align-items: flex-start;
+            gap: 8px;
+            font-size: 0.88rem;
+            line-height: 1.4;
         }
 
-        .action-checkbox {
-            width: 24px;
-            height: 24px;
-            border-radius: 4px;
-            border: 2px solid #00A99D;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #00A99D;
-            font-weight: bold;
-        }
+        .row-icon { flex-shrink: 0; width: 18px; text-align: center; font-size: 0.9rem; margin-top: 1px; }
 
-        .action-content {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .action-description {
-            font-weight: 500;
-            color: #fff;
-            font-size: 0.95rem;
-        }
-
-        .action-meta-info {
-            display: flex;
-            gap: 1.5rem;
-            font-size: 0.8rem;
-            color: #888;
-        }
-
-        .action-meta-info span {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .action-status {
-            text-align: right;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 0.3rem 0.7rem;
-            background: rgba(0, 169, 157, 0.2);
-            color: #00A99D;
-            border-radius: 4px;
-            font-size: 0.8rem;
+        .row-label {
             font-weight: 600;
+            color: #fff;
+            flex-shrink: 0;
+            margin-right: 2px;
         }
 
-        /* Last updated */
-        .last-updated {
+        .row-value { color: #b0bec5; }
+
+        .row-value.warning { color: #FFCA28; }
+        .row-value.muted   { color: #607080; }
+
+        /* Divider between top and rows */
+        .card-divider {
+            border: none;
+            border-top: 0.5px solid rgba(255,255,255,0.08);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(0, 169, 157, 0.15);
+            padding-top: 1.5rem;
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0, 169, 157, 0.2);
-            color: #888;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
+            color: #506070;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .header-meta {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            .snapshot-items {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .positions-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 500px) {
+            h1 { font-size: 1.35rem; }
+            .card-owner { margin-left: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="header-top">
-                <div>
-                    <h1>🚀 Cloud Hiring — Status Semanal</h1>
-                    <div class="header-meta" id="headerDate"></div>
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <div class="header-label">Cloud Hiring</div>
+        <h1>Status Semanal</h1>
+        <div class="header-period">Semana de 02/07 a 08/07 de 2026</div>
+    </header>
+
+    <!-- Positions -->
+    <div class="section-label">Posições</div>
+    <div class="positions">
+
+        <!-- Card 1: DBA -->
+        <div class="card yellow">
+            <div class="card-top">
+                <span class="card-name">DBA Specialist</span>
+                <span class="badge yellow">🟡 Em andamento</span>
+                <span class="card-stage">Entrevista técnica</span>
+                <span class="card-owner">👤 Nat</span>
+            </div>
+            <hr class="card-divider">
+            <div class="card-rows">
+                <div class="card-row">
+                    <span class="row-icon">👥</span>
+                    <span class="row-label">Pipeline:</span>
+                    <span class="row-value">8 ativos | 1 em entrevista técnica</span>
                 </div>
-                <div class="header-meta">
-                    <div class="badge priority">
-                        <span>⭐⭐⭐</span> Prioridade Alta
-                    </div>
-                    <div class="badge momentum">
-                        <span>↗️</span> Momentum: Em aceleração
-                    </div>
+                <div class="card-row">
+                    <span class="row-icon">➡</span>
+                    <span class="row-label">Próximo passo:</span>
+                    <span class="row-value">Concluir entrevista técnica e agendar etapa com liderança</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">⚠</span>
+                    <span class="row-label">Risco:</span>
+                    <span class="row-value muted">Nenhum</span>
                 </div>
             </div>
-        </header>
-
-        <!-- Snapshot -->
-        <section class="snapshot">
-            <h2>Visão Executiva</h2>
-            <div class="snapshot-items">
-                <div class="snapshot-item">
-                    <strong>Status geral:</strong>
-                    <span>3 vagas abertas | Processos em andamento | Equipe: Natalia, Vitória, Ketlin</span>
-                </div>
-                <div class="snapshot-item">
-                    <strong>Timeline:</strong>
-                    <span>DBA Specialist: entrevista técnica em andamento | Dev Java II: recalibragem em progresso | Infra Cloud II: alinhamento segunda-feira</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Posições -->
-        <section class="section">
-            <h2 class="section-title">📋 Posições — Status Detalhado</h2>
-            <div class="positions-grid" id="positionsGrid">
-                <!-- Posições carregadas via JavaScript -->
-            </div>
-        </section>
-
-        <!-- Próximos passos -->
-        <section class="section">
-            <h2 class="section-title">✓ Próximos Passos (Esta semana)</h2>
-            <div class="actions-list" id="actionsList">
-                <!-- Ações carregadas via JavaScript -->
-            </div>
-        </section>
-
-        <!-- Last updated -->
-        <div class="last-updated" id="lastUpdated">
-            Última atualização: Carregando...
         </div>
+
+        <!-- Card 2: Dev Java -->
+        <div class="card yellow">
+            <div class="card-top">
+                <span class="card-name">Dev Java Pleno</span>
+                <span class="badge yellow">🟡 Em andamento</span>
+                <span class="card-stage">Entrevistas Talent</span>
+                <span class="card-owner">👤 Vitória</span>
+            </div>
+            <hr class="card-divider">
+            <div class="card-rows">
+                <div class="card-row">
+                    <span class="row-icon">👥</span>
+                    <span class="row-label">Pipeline:</span>
+                    <span class="row-value">5 ativos | 3 em entrevista Talent</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">➡</span>
+                    <span class="row-label">Próximo passo:</span>
+                    <span class="row-value">Retorno das entrevistas Talent + encaminhar aprovados para etapa técnica</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">⚠</span>
+                    <span class="row-label">Risco:</span>
+                    <span class="row-value warning">Perfil recalibrado</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Infra Cloud -->
+        <div class="card green">
+            <div class="card-top">
+                <span class="card-name">Analista de Infraestrutura Cloud II</span>
+                <span class="badge green">🟢 No caminho</span>
+                <span class="card-stage">Alinhamento de perfil</span>
+                <span class="card-owner">👤 Ketlin</span>
+            </div>
+            <hr class="card-divider">
+            <div class="card-rows">
+                <div class="card-row">
+                    <span class="row-icon">👥</span>
+                    <span class="row-label">Pipeline:</span>
+                    <span class="row-value">3 mapeados | sourcing iniciando</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">➡</span>
+                    <span class="row-label">Próximo passo:</span>
+                    <span class="row-value">Agendar alinhamento com liderança e iniciar sourcing</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">⚠</span>
+                    <span class="row-label">Risco:</span>
+                    <span class="row-value warning">Em validação de orçamento para alteração de posição de junior para pleno</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <script>
-        // Dados estruturados — Semana 02/07/2026
-        const dashboardData = {
-            lastUpdated: "02 de julho de 2026 | Semana de 29/06 a 03/07",
-            positions: [
-                {
-                    title: "5775 — Especialista de Banco de Dados",
-                    owner: "@Natalia Kelly Aguiar",
-                    stage: "Entrevista técnica",
-                    health: "yellow",
-                    action: "Em andamento"
-                },
-                {
-                    title: "5741 — Dev Java Pleno (Platform Engineering)",
-                    owner: "@Vitória Carolina Buso Richil Nascimento",
-                    stage: "Recalibragem de perfis + Novas entrevistas Talent",
-                    health: "yellow",
-                    action: "Mapeamento em progresso"
-                },
-                {
-                    title: "5774 — Analista de Infraestrutura Cloud II",
-                    owner: "@Ketlin Sales Pereira",
-                    stage: "Alinhamento",
-                    health: "green",
-                    action: "Briefing segunda-feira"
-                }
-            ],
-            actions: [
-                {
-                    description: "DBA Specialist — Conclusão da entrevista técnica",
-                    owner: "Natalia",
-                    timeline: "Esta semana",
-                    status: "em andamento"
-                },
-                {
-                    description: "Dev Java II — Continuação de mapeamento de candidatos",
-                    owner: "Vitória",
-                    timeline: "Esta semana",
-                    status: "em andamento"
-                },
-                {
-                    description: "Infra Cloud II — Alinhamento interno para divulgação",
-                    owner: "Ketlin",
-                    timeline: "Segunda-feira",
-                    status: "agendado"
-                }
-            ]
-        };
+    <!-- Footer -->
+    <div class="footer">
+        Atualizado em 02/07/2026 • 09h &nbsp;|&nbsp; Próxima atualização: terça-feira, 09h
+    </div>
 
-        // Render positions
-        function renderPositions() {
-            const grid = document.getElementById('positionsGrid');
-            grid.innerHTML = dashboardData.positions.map(pos => `
-                <div class="position-card">
-                    <div class="position-header">
-                        <div class="position-title">${pos.title}</div>
-                        <div class="health-indicator ${pos.health}">
-                            ${pos.health === 'green' ? '🟢 No caminho' : '🟡 Em aceleração'}
-                        </div>
-                    </div>
-                    <div class="position-meta">
-                        <div class="meta-item">
-                            <div class="meta-label">Owner</div>
-                            <div class="meta-value">${pos.owner}</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Estágio</div>
-                            <div class="meta-value">${pos.stage}</div>
-                        </div>
-                        <div class="meta-item">
-                            <div class="meta-label">Ação</div>
-                            <div class="meta-value">${pos.action}</div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Render actions
-        function renderActions() {
-            const list = document.getElementById('actionsList');
-            list.innerHTML = dashboardData.actions.map(action => `
-                <div class="action-item">
-                    <div class="action-checkbox"></div>
-                    <div class="action-content">
-                        <div class="action-description">${action.description}</div>
-                        <div class="action-meta-info">
-                            <span>👤 ${action.owner}</span>
-                            <span>⏰ ${action.timeline}</span>
-                            <span>📌 ${action.status}</span>
-                        </div>
-                    </div>
-                    <div class="action-status">
-                        <div class="status-badge">${action.status}</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Render date
-        function renderDate() {
-            const dateDiv = document.getElementById('headerDate');
-            dateDiv.innerHTML = `<span>${dashboardData.lastUpdated}</span>`;
-            document.getElementById('lastUpdated').textContent = `Última atualização: ${dashboardData.lastUpdated} | Próxima: Toda terça-feira às 9h`;
-        }
-
-        // Initialize
-        window.addEventListener('load', () => {
-            renderPositions();
-            renderActions();
-            renderDate();
-        });
-    </script>
+</div>
 </body>
 </html>
