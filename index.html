@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Hiring — Status Semanal | Sankhya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0B1F35 0%, #1a2f4a 100%);
+            color: #fff;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 860px; margin: 0 auto; }
+
+        /* Header */
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 169, 157, 0.25);
+        }
+
+        .header-label {
+            font-size: 0.75rem;
+            color: #00A99D;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+
+        .header-period {
+            font-size: 0.9rem;
+            color: #8a9bb0;
+        }
+
+        /* Section title */
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #8a9bb0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        /* Position cards */
+        .positions { display: grid; gap: 12px; margin-bottom: 2.5rem; }
+
+        .card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            border-left: 3px solid transparent;
+        }
+
+        .card.green  { border-left-color: #4CAF50; }
+        .card.yellow { border-left-color: #FFC107; }
+        .card.red    { border-left-color: #f44336; }
+
+        /* Card top row */
+        .card-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .badge {
+            padding: 3px 9px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge.green  { background: rgba(76, 175, 80, 0.18);  color: #66BB6A; }
+        .badge.yellow { background: rgba(255, 193, 7, 0.18);  color: #FFCA28; }
+        .badge.red    { background: rgba(244, 67, 54, 0.18);  color: #EF5350; }
+
+        .card-stage { font-size: 0.82rem; color: #8a9bb0; }
+
+        .card-owner {
+            margin-left: auto;
+            font-size: 0.82rem;
+            color: #8a9bb0;
+        }
+
+        /* Card rows */
+        .card-rows { display: grid; gap: 8px; }
+
+        .card-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.88rem;
+            line-height: 1.4;
+        }
+
+        .row-icon { flex-shrink: 0; width: 18px; text-align: center; font-size: 0.9rem; margin-top: 1px; }
+
+        .row-label {
+            font-weight: 600;
+            color: #fff;
+            flex-shrink: 0;
+            margin-right: 2px;
+        }
+
+        .row-value { color: #b0bec5; }
+
+        .row-value.warning { color: #FFCA28; }
+        .row-value.muted   { color: #607080; }
+
+        /* Divider between top and rows */
+        .card-divider {
+            border: none;
+            border-top: 0.5px solid rgba(255,255,255,0.08);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(0, 169, 157, 0.15);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.78rem;
+            color: #506070;
+        }
+
+        @media (max-width: 500px) {
+            h1 { font-size: 1.35rem; }
+            .card-owner { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <div class="header-label">Cloud Hiring</div>
+        <h1>Status Semanal</h1>
+        <div class="header-period">Semana de 02/07 a 08/07 de 2026</div>
+    </header>
+
+    <!-- Positions -->
+    <div class="section-label">Posições</div>
+    <div class="positions">
+
+        <!-- Card 1: DBA -->
+        <div class="card yellow">
+            <div class="card-top">
+                <span class="card-name">DBA Specialist</span>
+                <span class="badge yellow">🟡 Em andamento</span>
+                <span class="card-stage">Entrevista técnica</span>
+                <span class="card-owner">👤 Nat</span>
+            </div>
+            <hr class="card-divider">
+            <div class="card-rows">
+                <div class="card-row">
+                    <span class="row-icon">👥</span>
+                    <span class="row-label">Pipeline:</span>
+                    <span class="row-value">8 ativos | 1 em entrevista técnica</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">➡</span>
+                    <span class="row-label">Próximo passo:</span>
+                    <span class="row-value">Concluir entrevista técnica e agendar etapa com liderança</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">⚠</span>
+                    <span class="row-label">Risco:</span>
+                    <span class="row-value muted">Nenhum</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Dev Java -->
+        <div class="card yellow">
+            <div class="card-top">
+                <span class="card-name">Dev Java Pleno</span>
+                <span class="badge yellow">🟡 Em andamento</span>
+                <span class="card-stage">Entrevistas Talent</span>
+                <span class="card-owner">👤 Vitória</span>
+            </div>
+            <hr class="card-divider">
+            <div class="card-rows">
+                <div class="card-row">
+                    <span class="row-icon">👥</span>
+                    <span class="row-label">Pipeline:</span>
+                    <span class="row-value">5 ativos | 3 em entrevista Talent</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">➡</span>
+                    <span class="row-label">Próximo passo:</span>
+                    <span class="row-value">Retorno das entrevistas Talent + encaminhar aprovados para etapa técnica</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">⚠</span>
+                    <span class="row-label">Risco:</span>
+                    <span class="row-value warning">Perfil recalibrado</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Infra Cloud -->
+        <div class="card green">
+            <div class="card-top">
+                <span class="card-name">Analista de Infraestrutura Cloud II</span>
+                <span class="badge green">🟢 No caminho</span>
+                <span class="card-stage">Alinhamento de perfil</span>
+                <span class="card-owner">👤 Ketlin</span>
+            </div>
+            <hr class="card-divider">
+            <div class="card-rows">
+                <div class="card-row">
+                    <span class="row-icon">👥</span>
+                    <span class="row-label">Pipeline:</span>
+                    <span class="row-value">3 mapeados | sourcing iniciando</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">➡</span>
+                    <span class="row-label">Próximo passo:</span>
+                    <span class="row-value">Agendar alinhamento com liderança e iniciar sourcing</span>
+                </div>
+                <div class="card-row">
+                    <span class="row-icon">⚠</span>
+                    <span class="row-label">Risco:</span>
+                    <span class="row-value warning">Em validação de orçamento para alteração de posição de junior para pleno</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Atualizado em 02/07/2026 • 09h &nbsp;|&nbsp; Próxima atualização: terça-feira, 09h
+    </div>
+
+</div>
+</body>
+</html>
