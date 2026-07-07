@@ -6,7 +6,11 @@
     <title>Cloud Hiring — Status Semanal | Sankhya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,360 +20,471 @@
             min-height: 100vh;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-        /* Header */
         header {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid rgba(0, 169, 157, 0.3);
             padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(0, 169, 157, 0.25);
         }
 
-        .header-label {
-            font-size: 0.75rem;
-            color: #00A99D;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-        }
-
-        h1 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.3rem;
-        }
-
-        .header-period {
-            font-size: 0.9rem;
-            color: #8a9bb0;
-        }
-
-        /* Section title */
-        .section-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #8a9bb0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        /* Position cards */
-        .positions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 2.5rem; align-items: start; }
-
-        .card {
-            background: rgba(255, 255, 255, 0.07);
-            border: 0.5px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.2rem 1.4rem;
-            border-left: 3px solid transparent;
-        }
-
-        .card.green  { border-left-color: #4CAF50; }
-        .card.yellow { border-left-color: #FFC107; }
-        .card.red    { border-left-color: #f44336; }
-
-        /* Card header */
-        .card-header { margin-bottom: 0.75rem; }
-
-        .card-row1 {
+        .header-top {
             display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-
-        .card-row2 {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .card-stage {
-            font-size: 0.82rem;
-            color: #8a9bb0;
-        }
-
-        .card-name {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .badge {
-            padding: 3px 9px;
-            border-radius: 5px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .badge.green  { background: rgba(76, 175, 80, 0.18);  color: #66BB6A; }
-        .badge.yellow { background: rgba(255, 193, 7, 0.18);  color: #FFCA28; }
-        .badge.red    { background: rgba(244, 67, 54, 0.18);  color: #EF5350; }
-
-        .card-stage { font-size: 0.82rem; color: #8a9bb0; }
-
-        .card-number {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #00A99D;
-            background: rgba(0, 169, 157, 0.12);
-            padding: 2px 7px;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
-
-        .card-people {
-            display: flex;
-            gap: 1.2rem;
-            margin-bottom: 1rem;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
-        .card-owner {
-            font-size: 0.82rem;
-            color: #8a9bb0;
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
         }
 
-        /* Card rows */
-        .card-rows { display: grid; gap: 8px; }
-
-        .card-row {
+        .header-meta {
             display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #b0b8c1;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge.priority {
+            background: rgba(255, 87, 51, 0.15);
+            color: #FF5733;
+        }
+
+        .badge.momentum {
+            background: rgba(0, 169, 157, 0.15);
+            color: #00A99D;
+        }
+
+        .badge.health {
+            background: rgba(76, 175, 80, 0.15);
+            color: #4CAF50;
+        }
+
+        /* Main grid sections */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(0, 169, 157, 0.2);
+        }
+
+        /* Posições Grid */
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .position-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 169, 157, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .position-card:hover {
+            border-color: rgba(0, 169, 157, 0.5);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .position-header {
+            display: flex;
+            justify-content: space-between;
             align-items: flex-start;
-            gap: 8px;
-            font-size: 0.88rem;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .position-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .position-number {
+            font-size: 0.75rem;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .health-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .health-indicator.green {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+        }
+
+        .health-indicator.yellow {
+            background: rgba(255, 193, 7, 0.2);
+            color: #FFC107;
+        }
+
+        .health-indicator.red {
+            background: rgba(255, 87, 51, 0.2);
+            color: #FF5733;
+        }
+
+        .position-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(0, 169, 157, 0.1);
+            border-bottom: 1px solid rgba(0, 169, 157, 0.1);
+        }
+
+        .meta-item {
+            font-size: 0.85rem;
+        }
+
+        .meta-label {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .meta-value {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .position-context {
+            background: rgba(0, 169, 157, 0.08);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #00A99D;
+            margin-bottom: 1rem;
+        }
+
+        .position-context label {
+            display: block;
+            font-size: 0.7rem;
+            color: #00A99D;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .position-context p {
+            font-size: 0.85rem;
+            color: #b0b8c1;
             line-height: 1.4;
         }
 
-        .row-icon { flex-shrink: 0; width: 18px; text-align: center; font-size: 0.9rem; margin-top: 1px; }
-
-        .row-label {
-            font-weight: 600;
-            color: #fff;
-            flex-shrink: 0;
-            margin-right: 2px;
-        }
-
-        .row-value { color: #b0bec5; }
-
-        .row-value.warning { color: #FFCA28; }
-        .row-value.muted   { color: #607080; }
-
-        /* Divider between top and rows */
-        .card-divider {
-            border: none;
-            border-top: 0.5px solid rgba(255,255,255,0.08);
-            margin-bottom: 1rem;
-        }
-
-        /* Decisions */
-        .decisions { display: grid; gap: 12px; margin-bottom: 2.5rem; }
-
-        .decision-card {
-            background: rgba(244, 67, 54, 0.07);
-            border: 0.5px solid rgba(244, 67, 54, 0.25);
-            border-left: 3px solid #f44336;
-            border-radius: 12px;
-            padding: 1.2rem 1.4rem;
-        }
-
-        .decision-top {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 0.8rem;
-        }
-
-        .decision-icon { font-size: 1rem; flex-shrink: 0; }
-
-        .decision-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .decision-body {
-            font-size: 0.85rem;
-            color: #8a9bb0;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-            padding-left: 28px;
-        }
-
-        .decision-options {
+        /* Desafios */
+        .challenges-grid {
             display: grid;
-            gap: 6px;
-            padding-left: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
 
-        .option {
+        .challenge-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 87, 51, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .challenge-card.warning {
+            border-color: rgba(255, 193, 7, 0.3);
+        }
+
+        .challenge-header {
             display: flex;
             align-items: flex-start;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: #b0bec5;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
         }
 
-        .option-label {
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 2px 7px;
-            border-radius: 4px;
+        .challenge-icon {
+            font-size: 1.4rem;
+            margin-top: 0.2rem;
             flex-shrink: 0;
         }
 
-        /* Footer */
-        .footer {
-            border-top: 1px solid rgba(0, 169, 157, 0.15);
-            padding-top: 1.5rem;
+        .challenge-title {
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .challenge-context {
+            font-size: 0.85rem;
+            color: #b0b8c1;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .challenge-action {
+            background: rgba(0, 169, 157, 0.1);
+            padding: 0.8rem;
+            border-radius: 6px;
+            border-left: 3px solid #00A99D;
+        }
+
+        .action-label {
+            font-size: 0.7rem;
+            color: #00A99D;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .action-text {
+            font-size: 0.85rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .action-meta {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 0.4rem;
+        }
+
+        /* Last updated */
+        .last-updated {
             text-align: center;
-            font-size: 0.78rem;
-            color: #506070;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 169, 157, 0.2);
+            color: #888;
+            font-size: 0.85rem;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .positions { grid-template-columns: 1fr; }
-        }
+            h1 {
+                font-size: 1.5rem;
+            }
 
-        @media (max-width: 500px) {
-            h1 { font-size: 1.35rem; }
-            .card-owner { margin-left: 0; }
+            .header-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .positions-grid,
+            .challenges-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-<div class="container">
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>🚀 Cloud Hiring — Status Semanal</h1>
+                    <div class="header-meta" id="headerDate"></div>
+                </div>
+            </div>
+        </header>
 
-    <!-- Header -->
-    <header>
-        <div class="header-label">Cloud Hiring</div>
-        <h1>Status Semanal</h1>
-        <div class="header-period">Semana de 02/07 a 08/07 de 2026</div>
-    </header>
+        <!-- Posições -->
+        <section class="section">
+            <h2 class="section-title">📋 Posições — Status Detalhado</h2>
+            <div class="positions-grid" id="positionsGrid">
+                <!-- Posições carregadas via JavaScript -->
+            </div>
+        </section>
 
-    <!-- Positions -->
-    <div class="section-label">Posições</div>
-    <div class="positions">
+        <!-- Decisões Pendentes -->
+        <section class="section" id="decisionsSection">
+            <h2 class="section-title">🔴 Decisões Pendentes</h2>
+            <div class="challenges-grid" id="decisionsGrid">
+                <!-- Decisões carregadas via JavaScript -->
+            </div>
+        </section>
 
-        <!-- Card 1: DBA -->
-        <div class="card yellow">
-            <div class="card-header">
-                <div class="card-row1">
-                    <span class="card-number">#5775</span>
-                    <span class="card-name">DBA Specialist</span>
-                </div>
-                <div class="card-row2">
-                    <span class="badge yellow">🟡 Em aceleração</span>
-                    <span class="card-stage">Entrevista técnica</span>
-                </div>
-            </div>
-            <div class="card-people">
-                <span class="card-owner">👤 Recrutadora: Nat</span>
-                <span class="card-owner">🏢 Líder: Charles</span>
-            </div>
-            <hr class="card-divider">
-            <div class="card-rows">
-                <div class="card-row">
-                    <span class="row-icon">👥</span>
-                    <span class="row-label">Pipeline:</span>
-                    <span class="row-value">8 ativos | 1 em entrevista técnica</span>
-                </div>
-                <div class="card-row">
-                    <span class="row-icon">➡</span>
-                    <span class="row-label">Próximo passo:</span>
-                    <span class="row-value">Concluir entrevista técnica e agendar etapa com liderança</span>
-                </div>
-                <div class="card-row">
-                    <span class="row-icon">⚠</span>
-                    <span class="row-label">Risco:</span>
-                    <span class="row-value muted">Nenhum</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 2: Dev Java -->
-        <div class="card yellow">
-            <div class="card-header">
-                <div class="card-row1">
-                    <span class="card-number">#5741</span>
-                    <span class="card-name">Dev Java Pleno</span>
-                </div>
-                <div class="card-row2">
-                    <span class="badge yellow">🟡 Em aceleração</span>
-                    <span class="card-stage">Entrevistas Talent</span>
-                </div>
-            </div>
-            <div class="card-people">
-                <span class="card-owner">👤 Recrutadora: Vitória</span>
-                <span class="card-owner">🏢 Líder: Wender</span>
-            </div>
-            <hr class="card-divider">
-            <div class="card-rows">
-                <div class="card-row">
-                    <span class="row-icon">👥</span>
-                    <span class="row-label">Pipeline:</span>
-                    <span class="row-value">5 ativos | 3 em entrevista Talent</span>
-                </div>
-                <div class="card-row">
-                    <span class="row-icon">➡</span>
-                    <span class="row-label">Próximo passo:</span>
-                    <span class="row-value">Retorno das entrevistas Talent + encaminhar aprovados para etapa técnica</span>
-                </div>
-                <div class="card-row">
-                    <span class="row-icon">⚠</span>
-                    <span class="row-label">Risco:</span>
-                    <span class="row-value warning">Perfil recalibrado</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3: Infra Cloud -->
-        <div class="card green">
-            <div class="card-header">
-                <div class="card-row1">
-                    <span class="card-number">#5774</span>
-                    <span class="card-name">Analista de Infraestrutura Cloud II</span>
-                </div>
-                <div class="card-row2">
-                    <span class="badge green">🟢 Iniciando</span>
-                    <span class="card-stage">Alinhamento de perfil</span>
-                </div>
-            </div>
-            <div class="card-people">
-                <span class="card-owner">👤 Recrutadora: Ketlin</span>
-                <span class="card-owner">🏢 Líder: Charles</span>
-            </div>
-            <hr class="card-divider">
-            <div class="card-rows">
-                <div class="card-row">
-                    <span class="row-icon">👥</span>
-                    <span class="row-label">Pipeline:</span>
-                    <span class="row-value">3 mapeados | sourcing iniciando</span>
-                </div>
-                <div class="card-row">
-                    <span class="row-icon">➡</span>
-                    <span class="row-label">Próximo passo:</span>
-                    <span class="row-value">Agendar alinhamento com liderança e iniciar sourcing</span>
-                </div>
-                <div class="card-row">
-                    <span class="row-icon">⚠</span>
-                    <span class="row-label">Risco:</span>
-                    <span class="row-value warning">Em validação de orçamento para alteração de posição de junior para pleno</span>
-                </div>
-            </div>
+        <!-- Last updated -->
+        <div class="last-updated" id="lastUpdated">
+            Última atualização: Carregando...
         </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        Atualizado em 02/07/2026 • 09h &nbsp;|&nbsp; Próxima atualização: terça-feira, 09h
-    </div>
+    <script>
+        const dashboardData = {
+            lastUpdated: new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
+            positions: [
+                {
+                    number: "5775",
+                    title: "DBA Specialist",
+                    stage: "SankherUP",
+                    recruiter: "Natalia Kelly Aguiar",
+                    leader: "Charles",
+                    pipeline: "2 ativos | 1 em SankherUP + 1 em entrevista Talent hoje",
+                    nextStep: "Se aprovado em SankherUP, iniciar proposta com Rodrigo",
+                    health: "yellow",
+                    risk: null
+                },
+                {
+                    number: "5741",
+                    title: "Desenvolvedor Java Pleno — Platform Engineering",
+                    stage: "Agendamento de avaliação técnica",
+                    recruiter: "Vitória Carolina Buso",
+                    leader: "Wender",
+                    pipeline: "6 ativos | 2 aprovados por Talent, agendamento técnico em marcha",
+                    nextStep: "Agendar entrevista técnica com 2 candidatos aprovados por Talent",
+                    health: "yellow",
+                    risk: null
+                },
+                {
+                    number: "5774",
+                    title: "Analista de Infraestrutura Cloud II",
+                    stage: "Aguardando liberação orçamentária",
+                    recruiter: "Ketlin Sales Pereira",
+                    leader: "Charles",
+                    pipeline: "Ainda não iniciado | Sourcing aguarda desbloqueio",
+                    nextStep: "Alinhamento da vaga com liderança (Charles) após liberação orçamentária",
+                    health: "red",
+                    risk: "Processo paralisado até liberação orçamentária pelo Financeiro"
+                }
+            ],
+            decisions: [
+                {
+                    title: "Analista de Infraestrutura Cloud II — Desbloqueio orçamentário",
+                    context: "Mudança de senioridade Junior→Pleno requer aprovação de investimento. Sem aprovação, sourcing ativo não inicia.",
+                    action: "Liberar orçamento para elevação de senioridade (Junior→Pleno)",
+                    responsible: "Financeiro"
+                }
+            ]
+        };
 
-</div>
+        function renderPositions() {
+            const grid = document.getElementById('positionsGrid');
+            grid.innerHTML = dashboardData.positions.map(pos => {
+                let riskHTML = '';
+                if (pos.risk) {
+                    riskHTML = `
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0, 169, 157, 0.1);">
+                            <div style="font-size: 0.7rem; color: #FF5733; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 0.3rem;">⚠ Risco</div>
+                            <div style="font-size: 0.85rem; color: #FF5733;">${pos.risk}</div>
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="position-card">
+                        <div class="position-number">#${pos.number}</div>
+                        <div class="position-header">
+                            <div class="position-title">${pos.title}</div>
+                            <div class="health-indicator ${pos.health}">
+                                ${pos.health === 'green' ? '🟢' : pos.health === 'yellow' ? '🟡' : '🔴'}
+                                ${pos.health === 'green' ? 'Iniciando' : pos.health === 'yellow' ? 'Em aceleração' : 'Bloqueado'}
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <div class="meta-item">
+                                <div class="meta-label">Estágio</div>
+                                <div class="meta-value">${pos.stage}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Recrutadora</div>
+                                <div class="meta-value">${pos.recruiter}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Líder</div>
+                                <div class="meta-value">${pos.leader}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">Pipeline</div>
+                                <div class="meta-value">${pos.pipeline}</div>
+                            </div>
+                        </div>
+                        <div class="position-context">
+                            <label>➡ Próximo passo</label>
+                            <p>${pos.nextStep}</p>
+                        </div>
+                        ${riskHTML}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderDecisions() {
+            const section = document.getElementById('decisionsSection');
+            const grid = document.getElementById('decisionsGrid');
+            
+            if (dashboardData.decisions.length === 0) {
+                section.style.display = 'none';
+                return;
+            }
+
+            grid.innerHTML = dashboardData.decisions.map(dec => `
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <div class="challenge-icon">🔴</div>
+                        <div class="challenge-title">${dec.title}</div>
+                    </div>
+                    <div class="challenge-context">${dec.context}</div>
+                    <div class="challenge-action">
+                        <div class="action-label">→ Ação necessária</div>
+                        <div class="action-text">${dec.action}</div>
+                        <div class="action-meta">Responsável: ${dec.responsible}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderDate() {
+            const dateDiv = document.getElementById('headerDate');
+            dateDiv.innerHTML = `<span>${dashboardData.lastUpdated}</span>`;
+            document.getElementById('lastUpdated').textContent = `Última atualização: ${dashboardData.lastUpdated} | Próxima atualização: Próxima terça-feira às 9h`;
+        }
+
+        window.addEventListener('load', () => {
+            renderPositions();
+            renderDecisions();
+            renderDate();
+        });
+    </script>
 </body>
 </html>
