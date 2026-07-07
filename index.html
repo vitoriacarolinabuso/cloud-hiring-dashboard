@@ -215,81 +215,6 @@
             line-height: 1.4;
         }
 
-        /* Desafios */
-        .challenges-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .challenge-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 87, 51, 0.3);
-            border-radius: 8px;
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .challenge-card.warning {
-            border-color: rgba(255, 193, 7, 0.3);
-        }
-
-        .challenge-header {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .challenge-icon {
-            font-size: 1.4rem;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .challenge-title {
-            font-weight: 700;
-            color: #fff;
-            font-size: 0.95rem;
-        }
-
-        .challenge-context {
-            font-size: 0.85rem;
-            color: #b0b8c1;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-
-        .challenge-action {
-            background: rgba(0, 169, 157, 0.1);
-            padding: 0.8rem;
-            border-radius: 6px;
-            border-left: 3px solid #00A99D;
-        }
-
-        .action-label {
-            font-size: 0.7rem;
-            color: #00A99D;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.3rem;
-        }
-
-        .action-text {
-            font-size: 0.85rem;
-            color: #fff;
-            font-weight: 500;
-        }
-
-        .action-meta {
-            font-size: 0.75rem;
-            color: #888;
-            margin-top: 0.4rem;
-        }
-
         /* Last updated */
         .last-updated {
             text-align: center;
@@ -338,14 +263,6 @@
             </div>
         </section>
 
-        <!-- Decisões Pendentes -->
-        <section class="section" id="decisionsSection">
-            <h2 class="section-title">🔴 Decisões Pendentes</h2>
-            <div class="challenges-grid" id="decisionsGrid">
-                <!-- Decisões carregadas via JavaScript -->
-            </div>
-        </section>
-
         <!-- Last updated -->
         <div class="last-updated" id="lastUpdated">
             Última atualização: Carregando...
@@ -381,20 +298,13 @@
                 {
                     number: "5774",
                     title: "Analista de Infraestrutura Cloud II",
-                    stage: "Vaga aberta como Junior, solicitada mudança para Pleno",
+                    stage: "Alinhamento em andamento",
                     recruiter: "Ketlin Sales Pereira",
                     leader: "Charles",
-                    pipeline: "Ainda não iniciado | Sourcing aguarda desbloqueio",
-                    nextStep: "Bate-papo técnico com Guilherme Muniz (avaliador) para entendimento da área já agendado. Após liberação de mudança de senioridade, prosseguir com alinhamento com Charles e início do processo.",
-                    health: "red",
-                    risk: "Processo paralisado até liberação da mudança de senioridade (Junior→Pleno)"
-                }
-            ],
-            decisions: [
-                {
-                    title: "Analista de Infraestrutura Cloud II — Desbloqueio de senioridade",
-                    context: "Vaga aberta como Junior, com solicitação de mudança para Pleno. Necessário liberação da mudança de senioridade para prosseguir com alinhamento com liderança e início do processo.",
-                    action: "Liberar mudança de senioridade (Junior→Pleno)"
+                    pipeline: "Ainda não iniciado | Sourcing aguarda alinhamento para iniciar processo seletivo",
+                    nextStep: "Bate-papo com Guilherme Muniz (avaliador) + alinhamento com Charles agendado. Após conclusão, iniciar divulgação e triagem.",
+                    health: "green",
+                    risk: null
                 }
             ]
         };
@@ -450,30 +360,6 @@
             }).join('');
         }
 
-        function renderDecisions() {
-            const section = document.getElementById('decisionsSection');
-            const grid = document.getElementById('decisionsGrid');
-            
-            if (dashboardData.decisions.length === 0) {
-                section.style.display = 'none';
-                return;
-            }
-
-            grid.innerHTML = dashboardData.decisions.map(dec => `
-                <div class="challenge-card">
-                    <div class="challenge-header">
-                        <div class="challenge-icon">🔴</div>
-                        <div class="challenge-title">${dec.title}</div>
-                    </div>
-                    <div class="challenge-context">${dec.context}</div>
-                    <div class="challenge-action">
-                        <div class="action-label">→ Ação necessária</div>
-                        <div class="action-text">${dec.action}</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
         function renderDate() {
             const dateDiv = document.getElementById('headerDate');
             dateDiv.innerHTML = `<span>${dashboardData.lastUpdated}</span>`;
@@ -482,7 +368,6 @@
 
         window.addEventListener('load', () => {
             renderPositions();
-            renderDecisions();
             renderDate();
         });
     </script>
