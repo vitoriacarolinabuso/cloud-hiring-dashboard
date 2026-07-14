@@ -1,6 +1,6 @@
 {
   "semana": "14 de julho de 2026",
-  "lastUpdated": "2026-07-14T15:45:12.061Z",
+  "lastUpdated": "2026-07-14T15:55:07.201Z",
   "vagas": [
     {
       "id": "5775",
@@ -36,11 +36,11 @@
       "numero": "5774",
       "nome": "Analista de Infraestrutura Cloud II",
       "badge": "green",
-      "estagio": "Alinhamento em andamento",
+      "estagio": "Entrevistas TA",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
-      "pipeline": "Ainda não iniciado | Sourcing aguarda alinhamento para iniciar processo seletivo",
-      "proximoPasso": "Bate-papo com Guilherme Muniz (avaliador) + alinhamento com Charles agendado. Após conclusão, iniciar divulgação e triagem.",
+      "pipeline": "7 perfis mapeados | 5 ativos",
+      "proximoPasso": "Entrevistas TA e agendamento entrevistas técnicas",
       "risco": null,
       "status": "ativo"
     }
