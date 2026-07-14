@@ -1,6 +1,6 @@
 {
   "semana": "14 de julho de 2026",
-  "lastUpdated": "2026-07-14T20:29:01.211Z",
+  "lastUpdated": "2026-07-14T20:43:22.027Z",
   "vagas": [
     {
       "id": "5775",
@@ -35,12 +35,12 @@
       "id": "5774",
       "numero": "5774",
       "nome": "Analista de Infraestrutura Cloud II",
-      "badge": "green",
+      "badge": "yellow",
       "estagio": "Entrevistas TA",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
-      "pipeline": "11 perfis mapeados I Em validação com os gestores",
-      "proximoPasso": "Entrevistas TA com os selecionados na pré-triagem.",
+      "pipeline": "Em entrevista TA",
+      "proximoPasso": "5 candidatos selecionados para entrevista com TA essa semana, em andamento.",
       "risco": null,
       "status": "ativo"
     }
