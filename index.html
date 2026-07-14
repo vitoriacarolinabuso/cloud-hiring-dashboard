@@ -6,11 +6,7 @@
     <title>Cloud Hiring — Status Semanal | Sankhya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,123 +16,58 @@
             min-height: 100vh;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .container.edit-mode-padding { padding-top: 5rem; }
 
+        /* HEADER */
         header {
             margin-bottom: 2.5rem;
             border-bottom: 2px solid rgba(0, 169, 157, 0.3);
             padding-bottom: 1.5rem;
         }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
+        h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
+        .header-date { font-size: 0.88rem; color: #b0b8c1; margin-top: 0.2rem; }
 
-        .header-meta {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-            color: #b0b8c1;
-            align-items: center;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .badge.priority {
-            background: rgba(255, 87, 51, 0.15);
-            color: #FF5733;
-        }
-
-        .badge.momentum {
-            background: rgba(0, 169, 157, 0.15);
-            color: #00A99D;
-        }
-
-        .badge.health {
-            background: rgba(76, 175, 80, 0.15);
-            color: #4CAF50;
-        }
-
-        /* Main grid sections */
-        .section {
-            margin-bottom: 2.5rem;
-        }
-
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 1px solid rgba(0, 169, 157, 0.2);
-        }
-
-        /* Posições Grid */
+        /* GRID */
         .positions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
         }
 
+        /* CARD */
         .position-card {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(0, 169, 157, 0.2);
             border-radius: 8px;
             padding: 1.5rem;
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            transition: border-color 0.2s;
         }
 
-        .position-card:hover {
-            border-color: rgba(0, 169, 157, 0.5);
-            background: rgba(255, 255, 255, 0.12);
+        .position-card:hover { border-color: rgba(0, 169, 157, 0.45); }
+        .edit-mode .position-card { border-color: rgba(0, 169, 157, 0.35); }
+
+        .position-number {
+            font-size: 0.72rem;
+            color: #888;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
         }
 
         .position-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
             gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .position-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .position-number {
-            font-size: 0.75rem;
-            color: #888;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
+        .position-title { font-size: 0.95rem; font-weight: 700; color: #fff; flex: 1; }
 
         .health-indicator {
             display: inline-flex;
@@ -146,230 +77,1026 @@
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
-        .health-indicator.green {
-            background: rgba(76, 175, 80, 0.2);
-            color: #4CAF50;
-        }
-
-        .health-indicator.yellow {
-            background: rgba(255, 193, 7, 0.2);
-            color: #FFC107;
-        }
-
-        .health-indicator.red {
-            background: rgba(255, 87, 51, 0.2);
-            color: #FF5733;
-        }
+        .health-indicator.green { background: rgba(76, 175, 80, 0.2); color: #4CAF50; }
+        .health-indicator.yellow { background: rgba(255, 193, 7, 0.2); color: #FFC107; }
+        .health-indicator.red { background: rgba(255, 87, 51, 0.2); color: #FF5733; }
 
         .position-meta {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 0.9rem;
             padding: 1rem 0;
             border-top: 1px solid rgba(0, 169, 157, 0.1);
             border-bottom: 1px solid rgba(0, 169, 157, 0.1);
+            margin-bottom: 1rem;
         }
 
-        .meta-item {
-            font-size: 0.85rem;
-        }
+        .meta-item { font-size: 0.85rem; }
 
         .meta-label {
             color: #888;
             text-transform: uppercase;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             letter-spacing: 0.5px;
             margin-bottom: 0.3rem;
         }
 
-        .meta-value {
-            color: #fff;
+        .meta-value { color: #fff; font-weight: 600; font-size: 0.9rem; }
+
+        .card-field { margin-top: 0.9rem; }
+
+        .field-label {
+            font-size: 0.68rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
             font-weight: 600;
+        }
+
+        .field-value { font-size: 0.87rem; color: #dde0e4; line-height: 1.5; }
+        .risk-field .field-label { color: #FF7043; }
+        .risk-field .field-value { color: #FF7043; }
+
+        /* EDIT INPUTS */
+        .edit-input {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(0, 169, 157, 0.45);
+            border-radius: 4px;
+            color: #fff;
+            padding: 0.4rem 0.6rem;
+            font-size: 0.87rem;
+            width: 100%;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .edit-input:focus {
+            border-color: #00A99D;
+            background: rgba(255, 255, 255, 0.11);
+        }
+
+        .edit-input-sm { font-size: 0.72rem; max-width: 130px; }
+
+        .edit-textarea {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(0, 169, 157, 0.45);
+            border-radius: 4px;
+            color: #fff;
+            padding: 0.5rem 0.6rem;
+            font-size: 0.87rem;
+            width: 100%;
+            min-height: 72px;
+            resize: vertical;
+            font-family: inherit;
+            outline: none;
+            line-height: 1.5;
+        }
+
+        .edit-textarea:focus { border-color: #00A99D; }
+
+        .badge-select {
+            background: rgba(11, 31, 53, 0.8);
+            border: 1px solid rgba(0, 169, 157, 0.45);
+            border-radius: 4px;
+            color: #fff;
+            padding: 0.3rem 0.5rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            outline: none;
+            font-family: inherit;
+        }
+
+        /* STATUS SELECTOR */
+        .edit-status-section {
+            margin-top: 1.1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 169, 157, 0.12);
+        }
+
+        .status-selector { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+
+        .status-btn {
+            padding: 0.38rem 0.9rem;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: transparent;
+            color: #666;
+            font-family: inherit;
+            transition: all 0.15s;
+        }
+
+        .status-btn:hover { color: #ccc; border-color: rgba(255,255,255,0.3); }
+        .status-btn.active-ativo { background: rgba(0,169,157,0.2); color: #00A99D; border-color: #00A99D; }
+        .status-btn.active-fechada { background: rgba(76,175,80,0.18); color: #4CAF50; border-color: #4CAF50; }
+        .status-btn.active-cancelada { background: rgba(255,87,51,0.15); color: #FF5733; border-color: #FF5733; }
+
+        /* EXTRA FIELDS (fechada / cancelada) */
+        .status-extra-fields {
+            margin-top: 0.9rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            border-left: 3px solid #4CAF50;
+        }
+
+        .status-extra-fields.cancelada-fields { border-left-color: #FF5733; }
+        .status-extra-fields .card-field:first-child { margin-top: 0; }
+        .status-extra-fields .field-label { color: #4CAF50; }
+        .status-extra-fields.cancelada-fields .field-label { color: #FF5733; }
+
+        /* ADD CARD */
+        .add-card-wrapper { display: none; margin-top: 1.5rem; justify-content: center; }
+        .edit-mode .add-card-wrapper { display: flex; }
+
+        .btn-add-card {
+            background: rgba(0, 169, 157, 0.1);
+            border: 2px dashed rgba(0, 169, 157, 0.4);
+            border-radius: 8px;
+            color: #00A99D;
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .btn-add-card:hover {
+            background: rgba(0, 169, 157, 0.2);
+            border-color: #00A99D;
+        }
+
+        /* EDIT BANNER */
+        .edit-banner {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(0, 110, 103, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0.9rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        }
+
+        .edit-banner span { font-weight: 600; font-size: 0.92rem; }
+        .edit-banner-actions { display: flex; gap: 0.8rem; align-items: center; }
+
+        .btn-save {
+            background: #fff;
+            color: #0B1F35;
+            border: none;
+            padding: 0.5rem 1.3rem;
+            border-radius: 4px;
+            font-size: 0.87rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-save:hover { background: #e8e8e8; }
+        .btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .btn-cancel-edit {
+            background: transparent;
+            color: rgba(255,255,255,0.75);
+            border: 1px solid rgba(255,255,255,0.35);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.87rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-cancel-edit:hover { color: #fff; border-color: #fff; }
+
+        /* FAB */
+        .edit-fab {
+            position: fixed;
+            bottom: 1.8rem;
+            right: 1.8rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.25);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .edit-fab:hover {
+            background: rgba(0, 169, 157, 0.25);
+            color: #00A99D;
+            border-color: rgba(0, 169, 157, 0.5);
+        }
+
+        /* PASSWORD MODAL */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-box {
+            background: #162840;
+            border: 1px solid rgba(0, 169, 157, 0.35);
+            border-radius: 12px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 360px;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.55);
+        }
+
+        .modal-box h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+        .modal-box p { color: #8a96a3; font-size: 0.87rem; margin-bottom: 1.2rem; }
+
+        .modal-input {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(0, 169, 157, 0.4);
+            border-radius: 6px;
+            color: #fff;
+            padding: 0.7rem 1rem;
+            font-size: 0.92rem;
+            width: 100%;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .modal-input:focus { border-color: #00A99D; }
+
+        .modal-error {
+            color: #FF5733;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .modal-actions { display: flex; gap: 0.8rem; margin-top: 1.2rem; }
+
+        .btn-primary {
+            background: #00A99D;
+            color: #fff;
+            border: none;
+            padding: 0.62rem 1.4rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            flex: 1;
+        }
+
+        .btn-primary:hover { background: #00BFB3; }
+        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .btn-ghost {
+            background: transparent;
+            color: #666;
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 0.62rem 1.1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        /* SAVING OVERLAY */
+        .saving-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+        }
+
+        .saving-box {
+            background: #162840;
+            border: 1px solid rgba(0, 169, 157, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             font-size: 0.95rem;
         }
 
-        .position-context {
-            background: rgba(0, 169, 157, 0.08);
-            padding: 1rem;
-            border-radius: 6px;
-            border-left: 3px solid #00A99D;
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0, 169, 157, 0.25);
+            border-top-color: #00A99D;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* HISTORY */
+        .history-trigger {
+            text-align: center;
+            margin: 2.5rem 0 0.5rem;
+        }
+
+        .btn-history {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #555;
+            padding: 0.55rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .btn-history:hover { color: #888; border-color: rgba(255,255,255,0.2); }
+
+        .history-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .history-title {
+            font-size: 0.8rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
             margin-bottom: 1rem;
         }
 
-        .position-context label {
-            display: block;
-            font-size: 0.7rem;
-            color: #00A99D;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.4rem;
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .history-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: 1.1rem;
+        }
+
+        .history-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .history-card-num { font-size: 0.68rem; color: #444; margin-bottom: 0.25rem; }
+        .history-card-name { font-size: 0.87rem; font-weight: 600; color: #7a8898; }
+
+        .history-badge {
+            font-size: 0.72rem;
             font-weight: 600;
+            padding: 0.22rem 0.6rem;
+            border-radius: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
-        .position-context p {
-            font-size: 0.85rem;
-            color: #b0b8c1;
-            line-height: 1.4;
-        }
+        .history-badge.fechada { background: rgba(76,175,80,0.12); color: #4CAF50; }
+        .history-badge.cancelada { background: rgba(255,87,51,0.1); color: #FF5733; }
 
-        /* Last updated */
+        .history-details { font-size: 0.8rem; color: #4a5568; line-height: 1.65; }
+        .history-details strong { color: #5a6577; }
+        .history-details .obs { color: #3d4a59; margin-top: 0.35rem; font-style: italic; }
+
+        /* LAST UPDATED */
         .last-updated {
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0, 169, 157, 0.2);
-            color: #888;
-            font-size: 0.85rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #444;
+            font-size: 0.8rem;
         }
 
-        /* Responsive */
+        /* EMPTY / LOADING */
+        .state-msg {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #555;
+            font-size: 0.88rem;
+            grid-column: 1 / -1;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .header-meta {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            .positions-grid,
-            .challenges-grid {
-                grid-template-columns: 1fr;
-            }
+            h1 { font-size: 1.5rem; }
+            .positions-grid { grid-template-columns: 1fr; }
+            .history-grid { grid-template-columns: 1fr; }
+            .edit-banner { flex-direction: column; gap: 0.7rem; text-align: center; padding: 0.8rem 1rem; }
+            .container.edit-mode-padding { padding-top: 7rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
+
+    <!-- Edit banner (edit mode only) -->
+    <div class="edit-banner" id="editBanner" style="display:none">
+        <span>✏️ Modo de edição</span>
+        <div class="edit-banner-actions">
+            <button class="btn-save" id="saveBtn" onclick="saveChanges()">💾 Salvar alterações</button>
+            <button class="btn-cancel-edit" onclick="cancelEdit()">✕ Cancelar</button>
+        </div>
+    </div>
+
+    <div class="container" id="mainContainer">
         <header>
-            <div class="header-top">
-                <div>
-                    <h1>🚀 Cloud Hiring — Status Semanal</h1>
-                    <div class="header-meta" id="headerDate"></div>
-                </div>
-            </div>
+            <h1>🚀 Cloud Hiring — Status Semanal</h1>
+            <div class="header-date" id="headerDate"></div>
         </header>
 
-        <!-- Posições -->
-        <section class="section">
-            <h2 class="section-title">📋 Posições — Status Detalhado</h2>
-            <div class="positions-grid" id="positionsGrid">
-                <!-- Posições carregadas via JavaScript -->
-            </div>
-        </section>
+        <div class="positions-grid" id="positionsGrid">
+            <div class="state-msg">Carregando vagas...</div>
+        </div>
 
-        <!-- Last updated -->
-        <div class="last-updated" id="lastUpdated">
-            Última atualização: Carregando...
+        <!-- Adicionar nova vaga (edit mode only) -->
+        <div class="add-card-wrapper">
+            <button class="btn-add-card" onclick="addNewCard()">+ Adicionar nova vaga</button>
+        </div>
+
+        <!-- Histórico -->
+        <div class="history-trigger">
+            <button class="btn-history" id="historyToggleBtn" onclick="toggleHistory()">
+                📁 Ver histórico de vagas
+            </button>
+        </div>
+
+        <div id="historySection" style="display:none" class="history-section">
+            <div class="history-title">Histórico de vagas</div>
+            <div class="history-grid" id="historyGrid"></div>
+        </div>
+
+        <div class="last-updated" id="lastUpdated"></div>
+    </div>
+
+    <!-- FAB (discreto) -->
+    <button class="edit-fab" id="editFab" onclick="showPasswordModal()" title="Editar dashboard">✏</button>
+
+    <!-- Password modal -->
+    <div class="modal-overlay" id="passwordModal" style="display:none">
+        <div class="modal-box">
+            <h3>🔒 Acesso restrito</h3>
+            <p>Insira a senha para editar o dashboard</p>
+            <input type="password" id="passwordInput" class="modal-input"
+                   placeholder="Senha do time"
+                   onkeydown="if(event.key==='Enter') authenticate()">
+            <div class="modal-error" id="passwordError">Senha incorreta</div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="authBtn" onclick="authenticate()">Entrar</button>
+                <button class="btn-ghost" onclick="closePasswordModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saving overlay -->
+    <div class="saving-overlay" id="savingOverlay" style="display:none">
+        <div class="saving-box">
+            <div class="spinner"></div>
+            <span id="savingText">Salvando alterações...</span>
         </div>
     </div>
 
     <script>
-        const dashboardData = {
-            lastUpdated: new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
-            positions: [
-                {
-                    number: "5775",
-                    title: "DBA Specialist",
-                    stage: "SankherUP",
-                    recruiter: "Natalia Kelly Aguiar",
-                    leader: "Charles",
-                    pipeline: "2 ativos | 1 em SankherUP + 1 em entrevista Talent hoje",
-                    nextStep: "Se aprovado em SankherUP, iniciar proposta com Rodrigo",
-                    health: "yellow",
-                    risk: null
-                },
-                {
-                    number: "5741",
-                    title: "Desenvolvedor Java Pleno — Platform Engineering",
-                    stage: "Agendamento de avaliação técnica",
-                    recruiter: "Vitória Carolina Buso",
-                    leader: "Wender",
-                    pipeline: "6 ativos | 2 aprovados por Talent, agendamento técnico em marcha",
-                    nextStep: "Agendar entrevista técnica com 2 candidatos aprovados por Talent",
-                    health: "yellow",
-                    risk: null
-                },
-                {
-                    number: "5774",
-                    title: "Analista de Infraestrutura Cloud II",
-                    stage: "Alinhamento em andamento",
-                    recruiter: "Ketlin Sales Pereira",
-                    leader: "Charles",
-                    pipeline: "Ainda não iniciado | Sourcing aguarda alinhamento para iniciar processo seletivo",
-                    nextStep: "Bate-papo com Guilherme Muniz (avaliador) + alinhamento com Charles agendado. Após conclusão, iniciar divulgação e triagem.",
-                    health: "green",
-                    risk: null
-                }
-            ]
-        };
+        /* ======================================================
+           STATE
+        ====================================================== */
+        let data = null;
+        let editMode = false;
+        let sessionPassword = null;
+        let historyVisible = false;
 
-        function renderPositions() {
-            const grid = document.getElementById('positionsGrid');
-            grid.innerHTML = dashboardData.positions.map(pos => {
-                let riskHTML = '';
-                if (pos.risk) {
-                    riskHTML = `
-                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0, 169, 157, 0.1);">
-                            <div style="font-size: 0.7rem; color: #FF5733; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 0.3rem;">⚠ Risco</div>
-                            <div style="font-size: 0.85rem; color: #FF5733;">${pos.risk}</div>
-                        </div>
-                    `;
-                }
+        /* ======================================================
+           INIT
+        ====================================================== */
+        async function init() {
+            try {
+                const res = await fetch('/api/load');
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                data = await res.json();
+                render();
+            } catch(e) {
+                document.getElementById('positionsGrid').innerHTML =
+                    '<div class="state-msg">Erro ao carregar dados. Recarregue a página.</div>';
+            }
+        }
 
-                return `
-                    <div class="position-card">
-                        <div class="position-number">#${pos.number}</div>
-                        <div class="position-header">
-                            <div class="position-title">${pos.title}</div>
-                            <div class="health-indicator ${pos.health}">
-                                ${pos.health === 'green' ? '🟢' : pos.health === 'yellow' ? '🟡' : '🔴'}
-                                ${pos.health === 'green' ? 'Iniciando' : pos.health === 'yellow' ? 'Em aceleração' : 'Bloqueado'}
-                            </div>
-                        </div>
-                        <div class="position-meta">
-                            <div class="meta-item">
-                                <div class="meta-label">Estágio</div>
-                                <div class="meta-value">${pos.stage}</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Recrutadora</div>
-                                <div class="meta-value">${pos.recruiter}</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Líder</div>
-                                <div class="meta-value">${pos.leader}</div>
-                            </div>
-                            <div class="meta-item">
-                                <div class="meta-label">Pipeline</div>
-                                <div class="meta-value">${pos.pipeline}</div>
-                            </div>
-                        </div>
-                        <div class="position-context">
-                            <label>➡ Próximo passo</label>
-                            <p>${pos.nextStep}</p>
-                        </div>
-                        ${riskHTML}
-                    </div>
-                `;
-            }).join('');
+        /* ======================================================
+           RENDER
+        ====================================================== */
+        function render() {
+            renderCards();
+            renderDate();
         }
 
         function renderDate() {
-            const dateDiv = document.getElementById('headerDate');
-            dateDiv.innerHTML = `<span>${dashboardData.lastUpdated}</span>`;
-            document.getElementById('lastUpdated').textContent = `Última atualização: ${dashboardData.lastUpdated} | Próxima atualização: Próxima terça-feira às 9h`;
+            const dateEl = document.getElementById('headerDate');
+            const luEl   = document.getElementById('lastUpdated');
+            if (data.semana) dateEl.textContent = 'Semana de ' + data.semana;
+            if (data.lastUpdated) {
+                const d = new Date(data.lastUpdated);
+                luEl.textContent = 'Última atualização: ' + d.toLocaleDateString('pt-BR', {
+                    weekday: 'long', year: 'numeric', month: 'long',
+                    day: 'numeric', hour: '2-digit', minute: '2-digit'
+                });
+            }
         }
 
-        window.addEventListener('load', () => {
-            renderPositions();
-            renderDate();
-        });
+        function renderCards() {
+            const grid = document.getElementById('positionsGrid');
+            const ativas = data.vagas.filter(v => v.status === 'ativo');
+            if (ativas.length === 0) {
+                grid.innerHTML = '<div class="state-msg">Nenhuma vaga ativa no momento.</div>';
+                return;
+            }
+            grid.innerHTML = ativas.map(buildCard).join('');
+        }
+
+        /* ======================================================
+           BUILD CARD
+        ====================================================== */
+        function buildCard(vaga) {
+            const E = editMode;
+            const id = vaga.id;
+            const badge = vaga.badge || 'green';
+            const badgeEmoji = { green:'🟢', yellow:'🟡', red:'🔴' }[badge] || '🟢';
+            const badgeLabel = { green:'Iniciando', yellow:'Em aceleração', red:'Bloqueado' }[badge] || 'Iniciando';
+
+            /* Risk */
+            let riskHtml = '';
+            if (E) {
+                riskHtml = `
+                <div class="card-field risk-field">
+                    <div class="field-label">⚠ Risco</div>
+                    <div class="field-value">
+                        <input type="text" class="edit-input"
+                               data-id="${id}" data-field="risco"
+                               value="${esc(vaga.risco || '')}"
+                               placeholder="Deixe vazio se não houver">
+                    </div>
+                </div>`;
+            } else if (vaga.risco) {
+                riskHtml = `
+                <div class="card-field risk-field">
+                    <div class="field-label">⚠ Risco</div>
+                    <div class="field-value">${san(vaga.risco)}</div>
+                </div>`;
+            }
+
+            /* Status controls (edit mode only) */
+            let editControls = '';
+            if (E) {
+                const pendingStatus = vaga._pendingStatus || vaga.status;
+                let extraFields = '';
+
+                if (pendingStatus === 'fechada') {
+                    extraFields = `
+                    <div class="status-extra-fields">
+                        <div class="card-field">
+                            <div class="field-label">Candidato contratado</div>
+                            <div class="field-value">
+                                <input type="text" class="edit-input"
+                                       data-id="${id}" data-field="candidatoAprovado"
+                                       value="${esc(vaga.candidatoAprovado || '')}"
+                                       placeholder="Nome completo do candidato">
+                            </div>
+                        </div>
+                        <div class="card-field">
+                            <div class="field-label">Data de início</div>
+                            <div class="field-value">
+                                <input type="text" class="edit-input"
+                                       data-id="${id}" data-field="dataInicio"
+                                       value="${esc(vaga.dataInicio || '')}"
+                                       placeholder="ex: 01/08/2026">
+                            </div>
+                        </div>
+                        <div class="card-field">
+                            <div class="field-label">Observações</div>
+                            <div class="field-value">
+                                <textarea class="edit-textarea"
+                                          data-id="${id}" data-field="observacoes"
+                                          placeholder="Informações adicionais (opcional)">${esc(vaga.observacoes || '')}</textarea>
+                            </div>
+                        </div>
+                    </div>`;
+                } else if (pendingStatus === 'cancelada') {
+                    extraFields = `
+                    <div class="status-extra-fields cancelada-fields">
+                        <div class="card-field">
+                            <div class="field-label">Motivo do cancelamento</div>
+                            <div class="field-value">
+                                <textarea class="edit-textarea"
+                                          data-id="${id}" data-field="motivoCancelamento"
+                                          placeholder="Descreva o motivo...">${esc(vaga.motivoCancelamento || '')}</textarea>
+                            </div>
+                        </div>
+                        <div class="card-field">
+                            <div class="field-label">Observações</div>
+                            <div class="field-value">
+                                <textarea class="edit-textarea"
+                                          data-id="${id}" data-field="observacoes"
+                                          placeholder="Informações adicionais (opcional)">${esc(vaga.observacoes || '')}</textarea>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+
+                editControls = `
+                <div class="edit-status-section">
+                    <div class="field-label">Status da vaga</div>
+                    <div class="status-selector">
+                        <button class="status-btn ${pendingStatus === 'ativo' ? 'active-ativo' : ''}"
+                                onclick="changeStatus('${id}', 'ativo')">Ativo</button>
+                        <button class="status-btn ${pendingStatus === 'fechada' ? 'active-fechada' : ''}"
+                                onclick="changeStatus('${id}', 'fechada')">✅ Fechada</button>
+                        <button class="status-btn ${pendingStatus === 'cancelada' ? 'active-cancelada' : ''}"
+                                onclick="changeStatus('${id}', 'cancelada')">✕ Cancelada</button>
+                    </div>
+                    ${extraFields}
+                </div>`;
+            }
+
+            return `
+<div class="position-card" id="card-${id}">
+    <div class="position-number">
+        ${E
+            ? `<input type="text" class="edit-input edit-input-sm" data-id="${id}" data-field="numero" value="${esc(vaga.numero)}" placeholder="Nº da vaga">`
+            : '#' + san(vaga.numero)}
+    </div>
+    <div class="position-header">
+        <div class="position-title">
+            ${E
+                ? `<input type="text" class="edit-input" data-id="${id}" data-field="nome" value="${esc(vaga.nome)}" placeholder="Nome da vaga">`
+                : san(vaga.nome)}
+        </div>
+        ${E
+            ? `<select class="badge-select" data-id="${id}" data-field="badge">
+                   <option value="green"  ${badge==='green'  ? 'selected':''}>🟢 Iniciando</option>
+                   <option value="yellow" ${badge==='yellow' ? 'selected':''}>🟡 Em aceleração</option>
+                   <option value="red"    ${badge==='red'    ? 'selected':''}>🔴 Bloqueado</option>
+               </select>`
+            : `<div class="health-indicator ${badge}">${badgeEmoji} ${badgeLabel}</div>`}
+    </div>
+    <div class="position-meta">
+        <div class="meta-item">
+            <div class="meta-label">Estágio</div>
+            <div class="meta-value">
+                ${E ? `<input type="text" class="edit-input" data-id="${id}" data-field="estagio" value="${esc(vaga.estagio)}">` : san(vaga.estagio)}
+            </div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Recrutadora</div>
+            <div class="meta-value">
+                ${E ? `<input type="text" class="edit-input" data-id="${id}" data-field="recrutadora" value="${esc(vaga.recrutadora)}">` : san(vaga.recrutadora)}
+            </div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Líder</div>
+            <div class="meta-value">
+                ${E ? `<input type="text" class="edit-input" data-id="${id}" data-field="lider" value="${esc(vaga.lider)}">` : san(vaga.lider)}
+            </div>
+        </div>
+    </div>
+    <div class="card-field">
+        <div class="field-label">👥 Pipeline</div>
+        <div class="field-value">
+            ${E ? `<input type="text" class="edit-input" data-id="${id}" data-field="pipeline" value="${esc(vaga.pipeline)}">` : san(vaga.pipeline)}
+        </div>
+    </div>
+    <div class="card-field">
+        <div class="field-label">➡ Próximo passo</div>
+        <div class="field-value">
+            ${E ? `<textarea class="edit-textarea" data-id="${id}" data-field="proximoPasso">${esc(vaga.proximoPasso)}</textarea>` : san(vaga.proximoPasso)}
+        </div>
+    </div>
+    ${riskHtml}
+    ${editControls}
+</div>`;
+        }
+
+        /* ======================================================
+           AUTH
+        ====================================================== */
+        function showPasswordModal() {
+            const modal = document.getElementById('passwordModal');
+            modal.style.display = 'flex';
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('passwordError').style.display = 'none';
+            setTimeout(() => document.getElementById('passwordInput').focus(), 80);
+        }
+
+        function closePasswordModal() {
+            document.getElementById('passwordModal').style.display = 'none';
+        }
+
+        async function authenticate() {
+            const pwd = document.getElementById('passwordInput').value;
+            if (!pwd) return;
+
+            const btn = document.getElementById('authBtn');
+            btn.disabled = true;
+            btn.textContent = '...';
+
+            try {
+                const res = await fetch('/api/validate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: pwd })
+                });
+
+                if (res.ok) {
+                    sessionPassword = pwd;
+                    closePasswordModal();
+                    enterEditMode();
+                } else {
+                    document.getElementById('passwordError').style.display = 'block';
+                    document.getElementById('passwordInput').focus();
+                }
+            } catch(e) {
+                alert('Erro ao verificar senha. Tente novamente.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Entrar';
+            }
+        }
+
+        /* ======================================================
+           EDIT MODE
+        ====================================================== */
+        function enterEditMode() {
+            editMode = true;
+            document.getElementById('editBanner').style.display = 'flex';
+            document.getElementById('editFab').style.display = 'none';
+            document.getElementById('mainContainer').classList.add('edit-mode', 'edit-mode-padding');
+            renderCards();
+        }
+
+        function cancelEdit() {
+            editMode = false;
+            sessionPassword = null;
+            data.vagas.forEach(v => { delete v._pendingStatus; });
+            document.getElementById('editBanner').style.display = 'none';
+            document.getElementById('editFab').style.display = 'flex';
+            document.getElementById('mainContainer').classList.remove('edit-mode', 'edit-mode-padding');
+            renderCards();
+        }
+
+        /* ======================================================
+           STATUS CHANGE
+        ====================================================== */
+        function changeStatus(id, newStatus) {
+            // Collect current input values for this card before re-rendering
+            collectCardInputs(id);
+            const vaga = data.vagas.find(v => v.id === id);
+            if (!vaga) return;
+            vaga._pendingStatus = newStatus;
+            // Re-render this card only
+            const cardEl = document.getElementById('card-' + id);
+            if (cardEl) {
+                const tmp = document.createElement('div');
+                tmp.innerHTML = buildCard(vaga);
+                cardEl.replaceWith(tmp.firstElementChild);
+            }
+        }
+
+        function collectCardInputs(id) {
+            const vaga = data.vagas.find(v => v.id === id);
+            if (!vaga) return;
+            document.querySelectorAll(`[data-id="${id}"][data-field]`).forEach(el => {
+                const field = el.dataset.field;
+                vaga[field] = el.value.trim() || null;
+            });
+        }
+
+        /* ======================================================
+           COLLECT ALL CHANGES
+        ====================================================== */
+        function collectAllChanges() {
+            const allIds = [...new Set(
+                [...document.querySelectorAll('[data-id][data-field]')].map(el => el.dataset.id)
+            )];
+            allIds.forEach(id => collectCardInputs(id));
+
+            // Apply pending statuses
+            data.vagas.forEach(v => {
+                if (v._pendingStatus !== undefined) {
+                    v.status = v._pendingStatus;
+                    delete v._pendingStatus;
+                    if (v.status === 'fechada' && !v.dataFechamento) {
+                        v.dataFechamento = new Date().toLocaleDateString('pt-BR');
+                    }
+                    if (v.status === 'cancelada' && !v.dataCancelamento) {
+                        v.dataCancelamento = new Date().toLocaleDateString('pt-BR');
+                    }
+                }
+            });
+
+            // Update semana
+            data.semana = new Date().toLocaleDateString('pt-BR', {
+                day: 'numeric', month: 'long', year: 'numeric'
+            });
+        }
+
+        /* ======================================================
+           SAVE
+        ====================================================== */
+        async function saveChanges() {
+            collectAllChanges();
+
+            const saveBtn = document.getElementById('saveBtn');
+            saveBtn.disabled = true;
+            document.getElementById('savingOverlay').style.display = 'flex';
+            document.getElementById('savingText').textContent = 'Salvando alterações...';
+
+            try {
+                const res = await fetch('/api/save', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: sessionPassword, data })
+                });
+
+                const result = await res.json();
+
+                if (res.status === 401) {
+                    document.getElementById('savingOverlay').style.display = 'none';
+                    saveBtn.disabled = false;
+                    alert('Sessão expirada. Cancele, recarregue a página e entre novamente.');
+                    return;
+                }
+
+                if (!res.ok) throw new Error(result.error || 'Erro desconhecido');
+
+                if (result.lastUpdated) data.lastUpdated = result.lastUpdated;
+
+                document.getElementById('savingText').textContent = '✓ Salvo com sucesso!';
+
+                setTimeout(() => {
+                    document.getElementById('savingOverlay').style.display = 'none';
+                    saveBtn.disabled = false;
+                    exitEditMode();
+                    render();
+                    if (historyVisible) renderHistory();
+                }, 900);
+
+            } catch(e) {
+                document.getElementById('savingOverlay').style.display = 'none';
+                saveBtn.disabled = false;
+                alert('Erro ao salvar: ' + e.message);
+            }
+        }
+
+        function exitEditMode() {
+            editMode = false;
+            sessionPassword = null;
+            document.getElementById('editBanner').style.display = 'none';
+            document.getElementById('editFab').style.display = 'flex';
+            document.getElementById('mainContainer').classList.remove('edit-mode', 'edit-mode-padding');
+        }
+
+        /* ======================================================
+           ADD NEW CARD
+        ====================================================== */
+        function addNewCard() {
+            const newId = 'v' + Date.now();
+            const newVaga = {
+                id: newId,
+                numero: '',
+                nome: '',
+                badge: 'green',
+                estagio: '',
+                recrutadora: '',
+                lider: '',
+                pipeline: '',
+                proximoPasso: '',
+                risco: null,
+                status: 'ativo'
+            };
+            data.vagas.push(newVaga);
+            renderCards();
+            setTimeout(() => {
+                const el = document.getElementById('card-' + newId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.querySelector('.edit-input')?.focus();
+                }
+            }, 120);
+        }
+
+        /* ======================================================
+           HISTORY
+        ====================================================== */
+        function toggleHistory() {
+            historyVisible = !historyVisible;
+            const section = document.getElementById('historySection');
+            const btn     = document.getElementById('historyToggleBtn');
+
+            if (historyVisible) {
+                section.style.display = 'block';
+                btn.textContent = '↑ Fechar histórico';
+                renderHistory();
+            } else {
+                section.style.display = 'none';
+                btn.textContent = '📁 Ver histórico de vagas';
+            }
+        }
+
+        function renderHistory() {
+            const grid = document.getElementById('historyGrid');
+            const arquivadas = data.vagas.filter(v => v.status !== 'ativo');
+
+            if (arquivadas.length === 0) {
+                grid.innerHTML = '<p style="color:#444; font-size:0.82rem; padding:0.5rem">Nenhuma vaga encerrada ou cancelada ainda.</p>';
+                return;
+            }
+
+            grid.innerHTML = arquivadas.map(v => {
+                const isFechada = v.status === 'fechada';
+                const badge = isFechada ? 'fechada' : 'cancelada';
+                const badgeLabel = isFechada ? '✅ Fechada' : '✕ Cancelada';
+
+                let details = '';
+                if (isFechada) {
+                    if (v.candidatoAprovado) details += `<div><strong>Contratado:</strong> ${san(v.candidatoAprovado)}</div>`;
+                    if (v.dataInicio)        details += `<div><strong>Início:</strong> ${san(v.dataInicio)}</div>`;
+                    if (v.dataFechamento)    details += `<div><strong>Fechada em:</strong> ${san(v.dataFechamento)}</div>`;
+                    if (v.observacoes)       details += `<div class="obs">${san(v.observacoes)}</div>`;
+                } else {
+                    if (v.motivoCancelamento) details += `<div><strong>Motivo:</strong> ${san(v.motivoCancelamento)}</div>`;
+                    if (v.dataCancelamento)   details += `<div><strong>Cancelada em:</strong> ${san(v.dataCancelamento)}</div>`;
+                    if (v.observacoes)        details += `<div class="obs">${san(v.observacoes)}</div>`;
+                }
+
+                return `
+<div class="history-card">
+    <div class="history-card-top">
+        <div>
+            <div class="history-card-num">#${san(v.numero)}</div>
+            <div class="history-card-name">${san(v.nome)}</div>
+        </div>
+        <span class="history-badge ${badge}">${badgeLabel}</span>
+    </div>
+    <div class="history-details">${details || '<span style="color:#333">Sem detalhes registrados</span>'}</div>
+</div>`;
+            }).join('');
+        }
+
+        /* ======================================================
+           UTILS
+        ====================================================== */
+        function esc(str) {
+            if (str == null) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+        }
+
+        function san(str) {
+            if (str == null) return '';
+            const d = document.createElement('div');
+            d.textContent = String(str);
+            return d.innerHTML;
+        }
+
+        /* ======================================================
+           START
+        ====================================================== */
+        window.addEventListener('load', init);
     </script>
 </body>
 </html>
