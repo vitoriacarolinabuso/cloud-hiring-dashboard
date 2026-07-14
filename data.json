@@ -1,6 +1,6 @@
 {
   "semana": "14 de julho de 2026",
-  "lastUpdated": "2026-07-14T09:00:00.000Z",
+  "lastUpdated": "2026-07-14T15:45:12.061Z",
   "vagas": [
     {
       "id": "5775",
@@ -23,10 +23,13 @@
       "estagio": "Agendamento de avaliação técnica",
       "recrutadora": "Vitória Carolina Buso",
       "lider": "Wender",
-      "pipeline": "6 ativos | 2 aprovados por Talent, agendamento técnico em marcha",
-      "proximoPasso": "Agendar entrevista técnica com 2 candidatos aprovados por Talent",
+      "pipeline": "6 ativos | 3 em entrevista técnica",
+      "proximoPasso": "3 entrevistas técnicas",
       "risco": null,
-      "status": "ativo"
+      "status": "cancelada",
+      "motivoCancelamento": "Realinhamento da área.",
+      "observacoes": null,
+      "dataCancelamento": "14/07/2026"
     },
     {
       "id": "5774",
