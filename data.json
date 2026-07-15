@@ -1,6 +1,6 @@
 {
   "semana": "15 de julho de 2026",
-  "lastUpdated": "2026-07-15T21:00:31.951Z",
+  "lastUpdated": "2026-07-15T21:14:14.391Z",
   "vagas": [
     {
       "id": "5775",
@@ -51,6 +51,19 @@
       "badge": "green",
       "estagio": "Alinhamento",
       "recrutadora": "Vitória Carolina Buso",
+      "lider": "Charles",
+      "pipeline": null,
+      "proximoPasso": "Agendamento de alinhamento da vaga com liderança",
+      "risco": null,
+      "status": "ativo"
+    },
+    {
+      "id": "v1784150018324",
+      "numero": "5848 | 5849",
+      "nome": "ANALISTA DE INFRAESTRUTURA CLOUD III",
+      "badge": "green",
+      "estagio": "Alinhamento",
+      "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
       "pipeline": null,
       "proximoPasso": "Agendamento de alinhamento da vaga com liderança",
