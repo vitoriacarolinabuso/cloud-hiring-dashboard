@@ -1,6 +1,6 @@
 {
-  "semana": "14 de julho de 2026",
-  "lastUpdated": "2026-07-14T20:43:22.027Z",
+  "semana": "15 de julho de 2026",
+  "lastUpdated": "2026-07-15T21:00:31.951Z",
   "vagas": [
     {
       "id": "5775",
@@ -41,6 +41,19 @@
       "lider": "Charles",
       "pipeline": "Em entrevista TA",
       "proximoPasso": "5 candidatos selecionados para entrevista com TA essa semana, em andamento.",
+      "risco": null,
+      "status": "ativo"
+    },
+    {
+      "id": "v1784149150892",
+      "numero": "5850",
+      "nome": "ADMINISTRADOR DE BANCO DE DADOS II",
+      "badge": "green",
+      "estagio": "Alinhamento",
+      "recrutadora": "Vitória Carolina Buso",
+      "lider": "Charles",
+      "pipeline": null,
+      "proximoPasso": "Agendamento de alinhamento da vaga com liderança",
       "risco": null,
       "status": "ativo"
     }
