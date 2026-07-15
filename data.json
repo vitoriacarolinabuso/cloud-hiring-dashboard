@@ -1,6 +1,6 @@
 {
   "semana": "15 de julho de 2026",
-  "lastUpdated": "2026-07-15T21:14:14.391Z",
+  "lastUpdated": "2026-07-15T21:16:32.284Z",
   "vagas": [
     {
       "id": "5775",
@@ -53,7 +53,7 @@
       "recrutadora": "Vitória Carolina Buso",
       "lider": "Charles",
       "pipeline": null,
-      "proximoPasso": "Agendamento de alinhamento da vaga com liderança",
+      "proximoPasso": "Alinhamento com liderança agendado para sexta feira",
       "risco": null,
       "status": "ativo"
     },
@@ -66,7 +66,7 @@
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
       "pipeline": null,
-      "proximoPasso": "Agendamento de alinhamento da vaga com liderança",
+      "proximoPasso": "Alinhamento com liderança agendado para sexta feira",
       "risco": null,
       "status": "ativo"
     }
