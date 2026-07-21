@@ -1,6 +1,6 @@
 {
   "semana": "21 de julho de 2026",
-  "lastUpdated": "2026-07-21T12:31:51.018Z",
+  "lastUpdated": "2026-07-21T12:42:00.324Z",
   "vagas": [
     {
       "id": "5775",
@@ -40,7 +40,7 @@
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
       "pipeline": "Em entrevista TA",
-      "proximoPasso": "5 candidatos selecionados para entrevista com TA essa semana, em andamento.",
+      "proximoPasso": "4 candidatos enviados para avaliação do gestor em (17/07), aguardando retorno.",
       "risco": null,
       "status": "ativo"
     },
@@ -66,7 +66,7 @@
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
       "pipeline": null,
-      "proximoPasso": "Alinhamento com liderança agendado para sexta feira (17/07)",
+      "proximoPasso": "Reagendado: Alinhamento em 21/07.",
       "risco": null,
       "status": "ativo"
     }
