@@ -1,6 +1,6 @@
 {
-  "semana": "21 de julho de 2026",
-  "lastUpdated": "2026-07-21T12:44:38.541Z",
+  "semana": "27 de julho de 2026",
+  "lastUpdated": "2026-07-27T18:52:33.304Z",
   "vagas": [
     {
       "id": "5775",
@@ -39,8 +39,8 @@
       "estagio": "Entrevistas TA",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
-      "pipeline": "Em entrevista TA",
-      "proximoPasso": "4 candidatos enviados para avaliação do gestor em (17/07), aguardando retorno.",
+      "pipeline": "1 Finalista I Agendado entrevista com o gestor Charles.",
+      "proximoPasso": "Um candidato foi bem avaliado na etapa técnica com o Guilherme e avançou para a conversa com o Charles. Caso seja aprovado, seguiremos para a etapa do SankhyerUP.",
       "risco": null,
       "status": "ativo"
     },
@@ -65,8 +65,8 @@
       "estagio": "Alinhamento",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
-      "pipeline": null,
-      "proximoPasso": "Reagendado: Alinhamento em 21/07.",
+      "pipeline": "Publicação da Vaga",
+      "proximoPasso": "Reagendado: Alinhamento em 21/07.\nTivemos alguns desalinhamentos, em 27/07 foi confirmado com o gestor que seriam duas vagas, e estamos aguardando validação do JD para publicação.",
       "risco": null,
       "status": "ativo"
     }
