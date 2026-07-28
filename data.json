@@ -1,17 +1,17 @@
 {
   "semana": "28 de julho de 2026",
-  "lastUpdated": "2026-07-28T12:40:47.753Z",
+  "lastUpdated": "2026-07-28T13:28:58.302Z",
   "vagas": [
     {
       "id": "5775",
       "numero": "5775",
       "nome": "DBA Specialist",
       "badge": "yellow",
-      "estagio": "Avaliação Técnica",
+      "estagio": "Avaliação Talent",
       "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Charles",
       "pipeline": "2 ativos | 1 em standy by após SankherUP + 1 em avaliação Talent",
-      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. Candidatos André e Jackson foram reprovados por questões de senioridade. Elias ativo no funil, avaliado por Talent, avançando em mapeamento comportamental e background check. Após validação, seguimos em avaliação técnica.",
+      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. Candidatos André, Jackson e Elias foram reprovados por questões de senioridade. Henrique Muniz ativo no funil, avaliado por Talent, avançando em mapeamento comportamental e background check. Após validação, seguimos em avaliação técnica. Candidato Edvaldo contato, aguardando confirmação para agendamento de entrevista. Em mapeamento de perfis contínuo para termos base comparativa de talentos no pipeline.",
       "risco": null,
       "status": "ativo"
     },
