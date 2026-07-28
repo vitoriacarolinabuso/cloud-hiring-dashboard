@@ -1,6 +1,6 @@
 {
-  "semana": "27 de julho de 2026",
-  "lastUpdated": "2026-07-27T18:52:33.304Z",
+  "semana": "28 de julho de 2026",
+  "lastUpdated": "2026-07-28T12:12:07.112Z",
   "vagas": [
     {
       "id": "5775",
@@ -39,8 +39,8 @@
       "estagio": "Entrevistas TA",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
-      "pipeline": "1 Finalista I Agendado entrevista com o gestor Charles.",
-      "proximoPasso": "Um candidato foi bem avaliado na etapa técnica com o Guilherme e avançou para a conversa com o Charles. Caso seja aprovado, seguiremos para a etapa do SankhyerUP.",
+      "pipeline": "1 Finalista I Agendado etapa de SankherUP",
+      "proximoPasso": "Após aprovação do Guilherme e Charles, seguiremos para a etapa do SankhyerUP, que possivelmente acontecerá hoje (28/07).",
       "risco": null,
       "status": "ativo"
     },
@@ -61,12 +61,12 @@
       "id": "v1784150018324",
       "numero": "5848 | 5849",
       "nome": "ANALISTA DE INFRAESTRUTURA CLOUD III",
-      "badge": "green",
-      "estagio": "Alinhamento",
+      "badge": "yellow",
+      "estagio": "Recrutamento",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
       "pipeline": "Publicação da Vaga",
-      "proximoPasso": "Reagendado: Alinhamento em 21/07.\nTivemos alguns desalinhamentos, em 27/07 foi confirmado com o gestor que seriam duas vagas, e estamos aguardando validação do JD para publicação.",
+      "proximoPasso": "Reagendado: Alinhamento em 21/07.\nTivemos alguns desalinhamentos, em 27/07 tivemos o JD completo para realizarmos a publicação. Vaga publicada hoje (28/07), em andamento para o hunting.",
       "risco": null,
       "status": "ativo"
     }
