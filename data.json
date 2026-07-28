@@ -1,17 +1,17 @@
 {
   "semana": "28 de julho de 2026",
-  "lastUpdated": "2026-07-28T13:30:07.392Z",
+  "lastUpdated": "2026-07-28T13:43:24.873Z",
   "vagas": [
     {
       "id": "5775",
       "numero": "5775",
       "nome": "DBA Specialist",
       "badge": "yellow",
-      "estagio": "Avaliação Talent",
+      "estagio": "Avaliação Técnica",
       "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Charles",
       "pipeline": "2 ativos | 1 em standy by após SankherUP + 1 em avaliação Talent",
-      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. Candidatos André, Jackson e Elias foram reprovados por questões de senioridade. Henrique Muniz ativo no funil, avaliado por Talent, avançando em mapeamento comportamental e background check. Após validação, seguimos em avaliação técnica. Candidato Edvaldo contatado, aguardando confirmação para agendamento de entrevista. Em mapeamento contínuo de perfis para termos base comparativa de talentos no pipeline.",
+      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. Candidatos André e Jackson foram reprovados por questões de senioridade. Elias ativo no funil, avaliado por Talent, avançando em mapeamento comportamental e background check. Após validação, seguimos em avaliação técnica.",
       "risco": null,
       "status": "ativo"
     },
@@ -67,6 +67,19 @@
       "lider": "Charles",
       "pipeline": "Publicação da Vaga",
       "proximoPasso": "Reagendado: Alinhamento em 21/07.\nTivemos alguns desalinhamentos, em 27/07 tivemos o JD completo para realizarmos a publicação. Vaga publicada hoje (28/07), em andamento para o hunting.",
+      "risco": null,
+      "status": "ativo"
+    },
+    {
+      "id": "v1785243604366",
+      "numero": "2516",
+      "nome": "Sales Engineer Specialist",
+      "badge": "yellow",
+      "estagio": "Hunting",
+      "recrutadora": "Dayane Magalhães Silva",
+      "lider": "Arthur",
+      "pipeline": "1 talento potencial pré-aprovado abordado | Mapeamento ativo em andamento",
+      "proximoPasso": "Briefing realizado (24/07). Mapeamento ativo iniciado. 1 talento potencial pré-aprovado já abordado.",
       "risco": null,
       "status": "ativo"
     }
