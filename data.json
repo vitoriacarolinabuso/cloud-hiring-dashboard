@@ -1,6 +1,6 @@
 {
   "semana": "30 de julho de 2026",
-  "lastUpdated": "2026-07-30T14:25:17.082Z",
+  "lastUpdated": "2026-07-30T18:12:26.029Z",
   "vagas": [
     {
       "id": "5775",
@@ -52,8 +52,8 @@
       "estagio": "Entrevistas TA",
       "recrutadora": "Vitória Carolina Buso",
       "lider": "Charles",
-      "pipeline": null,
-      "proximoPasso": "Alinhamento realizado em 24/07 e divulgada. \n- primeiras entrevistas entre 28/07 e 29/07",
+      "pipeline": "2 candidatos em etapa técnica",
+      "proximoPasso": "Alinhamento realizado em 24/07 e divulgada. \n- primeiras entrevistas entre 28/07 e 29/07\n- 30/07  inicio das entrevistas técnicas",
       "risco": null,
       "status": "ativo"
     },
