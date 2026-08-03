@@ -1,6 +1,6 @@
 {
-  "semana": "31 de julho de 2026",
-  "lastUpdated": "2026-07-31T12:41:11.769Z",
+  "semana": "3 de agosto de 2026",
+  "lastUpdated": "2026-08-03T14:24:27.306Z",
   "vagas": [
     {
       "id": "5775",
@@ -42,10 +42,11 @@
       "pipeline": "1 candidato em etapa de Carta Proposta",
       "proximoPasso": "Realizamos a proposta para o candidato Victor Hugo, e o mesmo aceitou o desafio. Ficamos no aguardo da confirmação da data de início; ele ficou de nos retornar até 31/07.",
       "risco": null,
-      "status": "ativo",
-      "candidatoAprovado": null,
-      "dataInicio": null,
-      "observacoes": null
+      "status": "fechada",
+      "candidatoAprovado": "Victor Hugo Sena Lima",
+      "dataInicio": "17/08/2026",
+      "observacoes": null,
+      "dataFechamento": "03/08/2026"
     },
     {
       "id": "v1784149150892",
