@@ -1097,7 +1097,8 @@
             if (str == null) return '';
             const d = document.createElement('div');
             d.textContent = String(str);
-            return d.innerHTML.replace(/\n/g, '<br>');
+            const NL = String.fromCharCode(10);
+            return d.innerHTML.split(NL).join('<br>');
         }
 
         /* ======================================================
