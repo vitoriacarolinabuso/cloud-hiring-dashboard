@@ -1,6 +1,6 @@
 {
-  "semana": "3 de agosto de 2026",
-  "lastUpdated": "2026-08-03T14:24:27.306Z",
+  "semana": "4 de agosto de 2026",
+  "lastUpdated": "2026-08-04T12:55:26.910Z",
   "vagas": [
     {
       "id": "5775",
@@ -53,11 +53,11 @@
       "numero": "5850",
       "nome": "ADMINISTRADOR DE BANCO DE DADOS II",
       "badge": "yellow",
-      "estagio": "Entrevistas TA",
+      "estagio": "Entrevista Liderança",
       "recrutadora": "Vitória Carolina Buso",
       "lider": "Charles",
-      "pipeline": "2 candidatos em etapa técnica",
-      "proximoPasso": "Alinhamento realizado em 24/07 e divulgada. \n- primeiras entrevistas entre 28/07 e 29/07\n- 30/07  inicio das entrevistas técnicas",
+      "pipeline": "2 candidatos em etapa técnica/Liderança",
+      "proximoPasso": "Alinhamento realizado em 24/07 e divulgada. \n- primeiras entrevistas entre 28/07 e 29/07\n- 30/07  inicio das entrevistas técnicas\n- 04/08 entrevista liderança com Jeferson e aguardando retorno Igor sobre Anderson",
       "risco": null,
       "status": "ativo"
     },
