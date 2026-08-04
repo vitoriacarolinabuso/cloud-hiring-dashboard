@@ -799,7 +799,7 @@
     <div class="card-field">
         <div class="field-label">➡ Próximo passo</div>
         <div class="field-value">
-            ${E ? `<textarea class="edit-textarea" data-id="${id}" data-field="proximoPasso">${esc(vaga.proximoPasso)}</textarea>` : san(vaga.proximoPasso)}
+            ${E ? `<textarea class="edit-textarea" data-id="${id}" data-field="proximoPasso">${esc(vaga.proximoPasso)}</textarea>` : sanMl(vaga.proximoPasso)}
         </div>
     </div>
     ${riskHtml}
@@ -1093,6 +1093,13 @@
             return d.innerHTML;
         }
 
+        function sanMl(str) {
+            if (str == null) return '';
+            const d = document.createElement('div');
+            d.textContent = String(str);
+            return d.innerHTML.replace(/\n/g, '<br>');
+        }
+
         /* ======================================================
            START
         ====================================================== */
@@ -1100,3 +1107,4 @@
     </script>
 </body>
 </html>
+
