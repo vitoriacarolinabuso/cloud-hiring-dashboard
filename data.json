@@ -1,6 +1,6 @@
 {
   "semana": "4 de agosto de 2026",
-  "lastUpdated": "2026-08-04T16:29:58.881Z",
+  "lastUpdated": "2026-08-04T20:11:01.137Z",
   "vagas": [
     {
       "id": "5775",
@@ -10,8 +10,8 @@
       "estagio": "Avaliação Técnica",
       "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Charles",
-      "pipeline": "5 ativos | 1 em standy by após SankherUP + 2 em etapa de mapeamento comportamental e background check + 2 em entrevista Talent",
-      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. \n2 Entrevistas Talent agendadas:\n- Márcio Caetano (alto potencial, indicação Márcio Moreira) - 30/07\n- Paulo Gabriel (origem hunting) - 31/07\n\n- Candidatos Henrique Diniz e Tiago Valentin (indicação Andrei). avançando em mapeamento comportamental e background check. Após validação, seguimos em avaliação técnica.\n\n- Ações: pipeline de candidatos está sendo revisitado, nova divulgação massiva realizada no LinkedIN. Perfil Tiago Neves enviado para validação prévia time técnico.",
+      "pipeline": "5 ativos | 1 em standy by após SankherUP + 3 em etapa de mapeamento comportamental e background check + 1 em entrevista Charles",
+      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. \n3 candidatos no funil de Talent com Assesment: Márcio Caetano, Tiago Neves e Henrique Diniz. Tiago Valentin reprovado na etapa técnica. Candidato Vitória para Pleno (Jeferson) sendo avaliado na etapa com liderança, considerado para uma possível cadeira de Sênior.",
       "risco": null,
       "status": "ativo"
     },
@@ -53,11 +53,11 @@
       "numero": "5850",
       "nome": "ADMINISTRADOR DE BANCO DE DADOS II",
       "badge": "yellow",
-      "estagio": "Entrevista Liderança",
+      "estagio": "Entrevistas TA",
       "recrutadora": "Vitória Carolina Buso",
       "lider": "Charles",
-      "pipeline": "2 candidatos em etapa técnica/Liderança",
-      "proximoPasso": "-  Alinhamento realizado em 24/07 e divulgada. \n\n- Primeiras entrevistas entre 28/07 e 29/07\n\n- 30/07  inicio das entrevistas técnica\n\n- 04/08 entrevista liderança com Jeferson e aguardando retorno Igor sobre Anderson",
+      "pipeline": "2 candidatos em etapa técnica",
+      "proximoPasso": "Alinhamento realizado em 24/07 e divulgada. \n- primeiras entrevistas entre 28/07 e 29/07\n- 30/07  inicio das entrevistas técnicas",
       "risco": null,
       "status": "ativo"
     },
@@ -69,8 +69,8 @@
       "estagio": "Recrutamento",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
-      "pipeline": "Hunting I Entrevista técnica",
-      "proximoPasso": "2 candidatos enviados para analise do gestor/Líder técnico. \n1 Candidato em fase de entrevista técnica.\n4 Candidatos em contato com TA.",
+      "pipeline": "Etapa de Hunting",
+      "proximoPasso": "2 candidatos em etapa de entrevista com TA.",
       "risco": null,
       "status": "ativo"
     },
@@ -83,7 +83,7 @@
       "recrutadora": "Dayane Magalhães Silva",
       "lider": "Arthur",
       "pipeline": "1 talento potencial pré-aprovado abordado | Mapeamento ativo em andamento",
-      "proximoPasso": "Briefing realizado (24/07). \n\nMapeamento ativo iniciado. \n\n1 talento potencial pré-aprovado já abordado.",
+      "proximoPasso": "Briefing realizado (24/07). Mapeamento ativo iniciado. 1 talento potencial pré-aprovado já abordado.",
       "risco": null,
       "status": "ativo"
     }
