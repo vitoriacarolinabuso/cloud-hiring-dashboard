@@ -1,6 +1,6 @@
 {
   "semana": "4 de agosto de 2026",
-  "lastUpdated": "2026-08-04T13:09:08.873Z",
+  "lastUpdated": "2026-08-04T16:29:58.881Z",
   "vagas": [
     {
       "id": "5775",
@@ -69,8 +69,8 @@
       "estagio": "Recrutamento",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
-      "pipeline": "Etapa de Hunting",
-      "proximoPasso": "2 candidatos em etapa de entrevista com TA.",
+      "pipeline": "Hunting I Entrevista técnica",
+      "proximoPasso": "2 candidatos enviados para analise do gestor/Líder técnico. \n1 Candidato em fase de entrevista técnica.\n4 Candidatos em contato com TA.",
       "risco": null,
       "status": "ativo"
     },
