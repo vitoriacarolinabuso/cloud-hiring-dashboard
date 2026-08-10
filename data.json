@@ -1,6 +1,6 @@
 {
-  "semana": "4 de agosto de 2026",
-  "lastUpdated": "2026-08-04T21:00:36.004Z",
+  "semana": "10 de agosto de 2026",
+  "lastUpdated": "2026-08-10T15:37:28.013Z",
   "vagas": [
     {
       "id": "5775",
@@ -80,10 +80,10 @@
       "nome": "Sales Engineer Specialist",
       "badge": "yellow",
       "estagio": "Hunting",
-      "recrutadora": "Dayane Magalhães Silva",
+      "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Arthur",
-      "pipeline": "1 talento potencial pré-aprovado abordado | Mapeamento ativo em andamento",
-      "proximoPasso": "Briefing realizado (24/07). Mapeamento ativo iniciado. 1 talento potencial pré-aprovado já abordado.  3 perfis em avaliação Talent.",
+      "pipeline": "Etapa de Entrevistas TA",
+      "proximoPasso": "Briefing realizado (24/07) com a Day. Mapeamento ativo iniciado. 1 talento potencial pré-aprovado abordado.  Perfis mapeados passando por avaliação de Talent.",
       "risco": null,
       "status": "ativo"
     }
