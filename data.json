@@ -1,6 +1,6 @@
 {
   "semana": "11 de agosto de 2026",
-  "lastUpdated": "2026-08-11T17:41:06.663Z",
+  "lastUpdated": "2026-08-11T17:43:55.448Z",
   "vagas": [
     {
       "id": "5775",
@@ -109,6 +109,23 @@
       "candidatoAprovado": "Paulo Cesar Oliveira Calixto",
       "dataInicio": "08/09/2026",
       "observacoes": "Vaga aberta no lugar da vaga de Cloud Ops Sr.",
+      "dataFechamento": "11/08/2026"
+    },
+    {
+      "id": "v1786470093629",
+      "numero": "5897",
+      "nome": "CLOUD OPS ENGINEER PLENO",
+      "badge": "yellow",
+      "estagio": "Admissão",
+      "recrutadora": "Ketlin Sales",
+      "lider": "Charles",
+      "pipeline": "Admissão I Jonathan Ramos",
+      "proximoPasso": "Processo de admissão com o candidato.",
+      "risco": null,
+      "status": "fechada",
+      "candidatoAprovado": "Jonathan Ramos",
+      "dataInicio": "08/09/2026",
+      "observacoes": "Vaga aberta no lugar de Cloud Ops Sr.",
       "dataFechamento": "11/08/2026"
     }
   ]
