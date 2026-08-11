@@ -1,6 +1,6 @@
 {
   "semana": "11 de agosto de 2026",
-  "lastUpdated": "2026-08-11T13:42:19.989Z",
+  "lastUpdated": "2026-08-11T17:37:36.433Z",
   "vagas": [
     {
       "id": "5775",
@@ -74,9 +74,12 @@
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Charles",
       "pipeline": "Etapa de Hunting",
-      "proximoPasso": "2 candidatos em etapa de entrevista com TA.",
+      "proximoPasso": "Foram realizadas 5 entrevistas com perfis de CloudOps Sênior; no entanto, mudamos a estratégia de ambas as vagas. O Charles, em conjunto com o Arthur e o Guilherme, entendeu que fazia sentido abrir uma posição de Pleno e uma de Especialista, ao invés de trabalharmos duas seniores. Nesse movimento, recebemos a indicação forte de dois profissionais, que já estavam aprovados (um em cada vaga). Seguimos para o fechamento com eles.",
       "risco": null,
-      "status": "ativo"
+      "status": "cancelada",
+      "motivoCancelamento": "O Charles, em conjunto com o Arthur e o Guilherme, entendeu que fazia sentido abrir uma posição de Pleno e uma de Especialista, ao invés de trabalharmos duas seniores. Nesse movimento, recebemos a indicação forte de dois profissionais, que já estavam aprovados (um em cada vaga). Seguimos para o fechamento com eles.",
+      "observacoes": "Colocando os Cards das duas vagas.",
+      "dataCancelamento": "11/08/2026"
     },
     {
       "id": "v1785243604366",
