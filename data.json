@@ -1,6 +1,6 @@
 {
   "semana": "11 de agosto de 2026",
-  "lastUpdated": "2026-08-11T17:37:36.433Z",
+  "lastUpdated": "2026-08-11T17:41:06.663Z",
   "vagas": [
     {
       "id": "5775",
@@ -93,6 +93,23 @@
       "proximoPasso": "Briefing realizado (24/07) com a Day. Mapeamento ativo iniciado. Perfis mapeados passando por avaliação de Talent. 1 talento potencial pré-aprovado abordado retornou com interesse e está em entrevista de Talent - Ricardo Melara (trabalhou com o Bruno Ledesma)",
       "risco": "Candidatos de mercado estão com expectativas salariais acima de 20k",
       "status": "ativo"
+    },
+    {
+      "id": "v1786469886383",
+      "numero": "5898",
+      "nome": "CLOUD OPS ENGINEER ESPECIALIST",
+      "badge": "yellow",
+      "estagio": "Admissão",
+      "recrutadora": "Ketlin Sales",
+      "lider": "Charles",
+      "pipeline": "Admissão",
+      "proximoPasso": "Candidato Paulo Calixto aprovado para a posição.",
+      "risco": null,
+      "status": "fechada",
+      "candidatoAprovado": "Paulo Cesar Oliveira Calixto",
+      "dataInicio": "08/09/2026",
+      "observacoes": "Vaga aberta no lugar da vaga de Cloud Ops Sr.",
+      "dataFechamento": "11/08/2026"
     }
   ]
 }
