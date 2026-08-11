@@ -1,6 +1,6 @@
 {
-  "semana": "10 de agosto de 2026",
-  "lastUpdated": "2026-08-10T15:37:28.013Z",
+  "semana": "11 de agosto de 2026",
+  "lastUpdated": "2026-08-11T12:58:46.273Z",
   "vagas": [
     {
       "id": "5775",
@@ -59,7 +59,11 @@
       "pipeline": "2 candidatos em etapa técnica",
       "proximoPasso": "Alinhamento realizado em 24/07 e divulgada. \n- primeiras entrevistas entre 28/07 e 29/07\n- 30/07  inicio das entrevistas técnicas",
       "risco": null,
-      "status": "ativo"
+      "status": "fechada",
+      "candidatoAprovado": "Jerfeson Santos Barbosa",
+      "dataInicio": "08/09/2026",
+      "observacoes": null,
+      "dataFechamento": "11/08/2026"
     },
     {
       "id": "v1784150018324",
