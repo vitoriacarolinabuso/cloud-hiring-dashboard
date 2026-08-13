@@ -1,6 +1,6 @@
 {
   "semana": "13 de agosto de 2026",
-  "lastUpdated": "2026-08-13T21:21:10.079Z",
+  "lastUpdated": "2026-08-13T21:23:02.063Z",
   "vagas": [
     {
       "id": "5775",
@@ -137,7 +137,7 @@
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Wender",
       "pipeline": "Briefing em agendamento",
-      "proximoPasso": null,
+      "proximoPasso": "Alinhamento em agendamento + revisão de contexto e pipeline em andamento para início da atuação na vaga.",
       "risco": null,
       "status": "ativo"
     }
