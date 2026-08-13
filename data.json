@@ -1,6 +1,6 @@
 {
-  "semana": "11 de agosto de 2026",
-  "lastUpdated": "2026-08-11T21:27:17.168Z",
+  "semana": "13 de agosto de 2026",
+  "lastUpdated": "2026-08-13T21:21:10.079Z",
   "vagas": [
     {
       "id": "5775",
@@ -133,10 +133,10 @@
       "numero": "5904",
       "nome": "DEVOPS ENGINEER II",
       "badge": "green",
-      "estagio": "Aprovada por PP",
-      "recrutadora": "A definir até 12/08",
+      "estagio": "Aprovada por TA",
+      "recrutadora": "Ketlin Sales Pereira",
       "lider": "Wender",
-      "pipeline": null,
+      "pipeline": "Briefing em agendamento",
       "proximoPasso": null,
       "risco": null,
       "status": "ativo"
