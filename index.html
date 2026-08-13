@@ -493,6 +493,50 @@
         .history-details strong { color: #5a6577; }
         .history-details .obs { color: #3d4a59; margin-top: 0.35rem; font-style: italic; }
 
+
+        /* HISTORY — EDIT MODE */
+        .history-card.history-card-editing {
+            border-color: rgba(0, 169, 157, 0.35);
+            background: rgba(255,255,255,0.06);
+        }
+
+        .hist-edit-fields {
+            margin-top: 0.8rem;
+            padding: 0.85rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+            border-left: 3px solid #4CAF50;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .hist-edit-fields.cancelada-fields { border-left-color: #FF5733; }
+
+        .hist-edit-fields .field-label { color: #4CAF50; }
+        .hist-edit-fields.cancelada-fields .field-label { color: #FF5733; }
+
+        .btn-reopen {
+            margin-top: 0.85rem;
+            width: 100%;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+            padding: 0.42rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.76rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-reopen:hover {
+            color: #FFC107;
+            border-color: rgba(255,193,7,0.35);
+            background: rgba(255,193,7,0.07);
+        }
+
         /* LAST UPDATED */
         .last-updated {
             text-align: center;
@@ -862,6 +906,7 @@
             document.getElementById('editFab').style.display = 'none';
             document.getElementById('mainContainer').classList.add('edit-mode', 'edit-mode-padding');
             renderCards();
+            if (historyVisible) renderHistory();
         }
 
         function cancelEdit() {
@@ -872,6 +917,7 @@
             document.getElementById('editFab').style.display = 'flex';
             document.getElementById('mainContainer').classList.remove('edit-mode', 'edit-mode-padding');
             renderCards();
+            if (historyVisible) renderHistory();
         }
 
         /* ======================================================
@@ -1045,22 +1091,71 @@
             grid.innerHTML = arquivadas.map(v => {
                 const isFechada = v.status === 'fechada';
                 const badge = isFechada ? 'fechada' : 'cancelada';
-                const badgeLabel = isFechada ? '✅ Fechada' : '✕ Cancelada';
+                const badgeLabel = isFechada ? '\u2705 Fechada' : '\u2715 Cancelada';
 
-                let details = '';
-                if (isFechada) {
-                    if (v.candidatoAprovado) details += `<div><strong>Contratado:</strong> ${san(v.candidatoAprovado)}</div>`;
-                    if (v.dataInicio)        details += `<div><strong>Início:</strong> ${san(v.dataInicio)}</div>`;
-                    if (v.dataFechamento)    details += `<div><strong>Fechada em:</strong> ${san(v.dataFechamento)}</div>`;
-                    if (v.observacoes)       details += `<div class="obs">${san(v.observacoes)}</div>`;
+                let body = '';
+
+                if (editMode) {
+                    if (isFechada) {
+                        body = `
+                <div class="hist-edit-fields">
+                    <div class="card-field">
+                        <div class="field-label">Contratado</div>
+                        <input type="text" class="edit-input"
+                               data-id="${v.id}" data-field="candidatoAprovado"
+                               value="${esc(v.candidatoAprovado || '')}"
+                               placeholder="Nome do candidato aprovado">
+                    </div>
+                    <div class="card-field">
+                        <div class="field-label">Data de in\u00edcio</div>
+                        <input type="text" class="edit-input"
+                               data-id="${v.id}" data-field="dataInicio"
+                               value="${esc(v.dataInicio || '')}"
+                               placeholder="ex: 01/08/2026">
+                    </div>
+                    <div class="card-field">
+                        <div class="field-label">Observa\u00e7\u00f5es</div>
+                        <textarea class="edit-textarea"
+                                  data-id="${v.id}" data-field="observacoes"
+                                  placeholder="Informa\u00e7\u00f5es adicionais (opcional)">${esc(v.observacoes || '')}</textarea>
+                    </div>
+                </div>
+                <button class="btn-reopen" onclick="reopenVaga('${v.id}')">\u21a9 Reabrir vaga</button>`;
+                    } else {
+                        body = `
+                <div class="hist-edit-fields cancelada-fields">
+                    <div class="card-field">
+                        <div class="field-label">Motivo do cancelamento</div>
+                        <textarea class="edit-textarea"
+                                  data-id="${v.id}" data-field="motivoCancelamento"
+                                  placeholder="Descreva o motivo...">${esc(v.motivoCancelamento || '')}</textarea>
+                    </div>
+                    <div class="card-field">
+                        <div class="field-label">Observa\u00e7\u00f5es</div>
+                        <textarea class="edit-textarea"
+                                  data-id="${v.id}" data-field="observacoes"
+                                  placeholder="Informa\u00e7\u00f5es adicionais (opcional)">${esc(v.observacoes || '')}</textarea>
+                    </div>
+                </div>
+                <button class="btn-reopen" onclick="reopenVaga('${v.id}')">\u21a9 Reabrir vaga</button>`;
+                    }
                 } else {
-                    if (v.motivoCancelamento) details += `<div><strong>Motivo:</strong> ${san(v.motivoCancelamento)}</div>`;
-                    if (v.dataCancelamento)   details += `<div><strong>Cancelada em:</strong> ${san(v.dataCancelamento)}</div>`;
-                    if (v.observacoes)        details += `<div class="obs">${san(v.observacoes)}</div>`;
+                    let details = '';
+                    if (isFechada) {
+                        if (v.candidatoAprovado) details += `<div><strong>Contratado:</strong> ${san(v.candidatoAprovado)}</div>`;
+                        if (v.dataInicio)        details += `<div><strong>In\u00edcio:</strong> ${san(v.dataInicio)}</div>`;
+                        if (v.dataFechamento)    details += `<div><strong>Fechada em:</strong> ${san(v.dataFechamento)}</div>`;
+                        if (v.observacoes)       details += `<div class="obs">${san(v.observacoes)}</div>`;
+                    } else {
+                        if (v.motivoCancelamento) details += `<div><strong>Motivo:</strong> ${san(v.motivoCancelamento)}</div>`;
+                        if (v.dataCancelamento)   details += `<div><strong>Cancelada em:</strong> ${san(v.dataCancelamento)}</div>`;
+                        if (v.observacoes)        details += `<div class="obs">${san(v.observacoes)}</div>`;
+                    }
+                    body = `<div class="history-details">${details || '<span style="color:#333">Sem detalhes registrados</span>'}</div>`;
                 }
 
                 return `
-<div class="history-card">
+<div class="history-card ${editMode ? 'history-card-editing' : ''}" id="card-${v.id}">
     <div class="history-card-top">
         <div>
             <div class="history-card-num">#${san(v.numero)}</div>
@@ -1068,10 +1163,24 @@
         </div>
         <span class="history-badge ${badge}">${badgeLabel}</span>
     </div>
-    <div class="history-details">${details || '<span style="color:#333">Sem detalhes registrados</span>'}</div>
+    ${body}
 </div>`;
             }).join('');
         }
+
+        function reopenVaga(id) {
+            collectCardInputs(id);
+            const vaga = data.vagas.find(v => v.id === id);
+            if (!vaga) return;
+            if (!confirm(`Reabrir "${vaga.nome}"?\n\nA vaga voltará para o painel ativo. As informações preenchidas acima serão mantidas.`)) return;
+            vaga.status = 'ativo';
+            vaga.dataFechamento   = null;
+            vaga.dataCancelamento = null;
+            delete vaga._pendingStatus;
+            renderCards();
+            renderHistory();
+        }
+
 
         /* ======================================================
            UTILS
@@ -1108,4 +1217,5 @@
     </script>
 </body>
 </html>
+
 
