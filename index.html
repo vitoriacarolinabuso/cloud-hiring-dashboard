@@ -460,39 +460,75 @@
         }
 
         .history-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.14);
             border-radius: 8px;
-            padding: 1.1rem;
+            padding: 1.2rem;
+            transition: border-color 0.2s;
         }
+
+        .history-card:hover { border-color: rgba(255,255,255,0.22); }
 
         .history-card-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             gap: 0.8rem;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.8rem;
         }
 
-        .history-card-num { font-size: 0.68rem; color: #444; margin-bottom: 0.25rem; }
-        .history-card-name { font-size: 0.87rem; font-weight: 600; color: #7a8898; }
+        .history-card-num { font-size: 0.72rem; color: #7a8faa; margin-bottom: 0.28rem; font-weight: 600; letter-spacing: 0.5px; }
+        .history-card-name { font-size: 0.92rem; font-weight: 700; color: #c8d6e4; line-height: 1.35; }
 
         .history-badge {
-            font-size: 0.72rem;
-            font-weight: 600;
-            padding: 0.22rem 0.6rem;
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 0.28rem 0.7rem;
             border-radius: 10px;
             white-space: nowrap;
             flex-shrink: 0;
         }
 
-        .history-badge.fechada { background: rgba(76,175,80,0.12); color: #4CAF50; }
-        .history-badge.cancelada { background: rgba(255,87,51,0.1); color: #FF5733; }
+        .history-badge.fechada { background: rgba(76,175,80,0.2); color: #66BB6A; }
+        .history-badge.cancelada { background: rgba(255,87,51,0.18); color: #FF7055; }
 
-        .history-details { font-size: 0.8rem; color: #4a5568; line-height: 1.65; }
-        .history-details strong { color: #5a6577; }
-        .history-details .obs { color: #3d4a59; margin-top: 0.35rem; font-style: italic; }
+        .history-details { font-size: 0.83rem; color: #96a8bc; line-height: 1.7; }
+        .history-details strong { color: #b8cad8; font-weight: 600; }
+        .history-details .obs { color: #7a90a8; margin-top: 0.4rem; font-style: italic; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.4rem; }
 
+
+        /* MOVIMENTAÇÕES (log de reaberturas) */
+        .mov-section {
+            margin-top: 1rem;
+            padding-top: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .mov-list { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 0.45rem; }
+
+        .mov-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.55rem;
+            font-size: 0.79rem;
+            line-height: 1.5;
+        }
+
+        .mov-pill {
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 0.15rem 0.55rem;
+            border-radius: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        .mov-pill.fechada { background: rgba(76,175,80,0.18); color: #66BB6A; }
+        .mov-pill.cancelada { background: rgba(255,87,51,0.14); color: #FF7055; }
+
+        .mov-text { color: #7a8fa6; }
+        .mov-text em { color: #98adc0; font-style: normal; font-weight: 600; }
 
         /* HISTORY — EDIT MODE */
         .history-card.history-card-editing {
@@ -793,6 +829,35 @@
                 </div>`;
             }
 
+            /* Movimentações anteriores (log de reaberturas) */
+            let movHtml = '';
+            if (!E && vaga.movimentacoes && vaga.movimentacoes.length > 0) {
+                const entries = vaga.movimentacoes.map(m => {
+                    const tipo = m.tipo === 'fechada' ? 'fechada' : 'cancelada';
+                    const pill = m.tipo === 'fechada' ? '\u2705 Fechada' : '\u2715 Cancelada';
+                    let parts = [];
+                    if (m.tipo === 'fechada') {
+                        if (m.candidatoAprovado) parts.push('<em>' + san(m.candidatoAprovado) + '</em>');
+                        if (m.dataInicio)        parts.push('in\u00edcio previsto ' + san(m.dataInicio));
+                        if (m.dataFechamento)    parts.push('fechada em ' + san(m.dataFechamento));
+                    } else {
+                        if (m.motivoCancelamento) parts.push(san(m.motivoCancelamento));
+                        if (m.dataCancelamento)   parts.push('em ' + san(m.dataCancelamento));
+                    }
+                    if (m.reabertaEm) parts.push('reaberta em ' + san(m.reabertaEm));
+                    if (m.observacoes) parts.push(san(m.observacoes));
+                    return `<div class="mov-entry">
+                        <span class="mov-pill ${tipo}">${pill}</span>
+                        <span class="mov-text">${parts.join(' \u00b7 ')}</span>
+                    </div>`;
+                }).join('');
+                movHtml = `
+    <div class="card-field mov-section">
+        <div class="field-label">\u23f1 Movimenta\u00e7\u00f5es</div>
+        <div class="mov-list">${entries}</div>
+    </div>`;
+            }
+
             return `
 <div class="position-card" id="card-${id}">
     <div class="position-number">
@@ -848,6 +913,7 @@
     </div>
     ${riskHtml}
     ${editControls}
+    ${movHtml}
 </div>`;
         }
 
@@ -1172,11 +1238,33 @@
             collectCardInputs(id);
             const vaga = data.vagas.find(v => v.id === id);
             if (!vaga) return;
-            if (!confirm(`Reabrir "${vaga.nome}"?\n\nA vaga voltará para o painel ativo. As informações preenchidas acima serão mantidas.`)) return;
-            vaga.status = 'ativo';
-            vaga.dataFechamento   = null;
-            vaga.dataCancelamento = null;
+            if (!confirm(`Reabrir "${vaga.nome}"?\n\nA vaga voltará para o painel ativo com o log desta movimentação.`)) return;
+
+            // Registrar movimentação
+            const mov = { tipo: vaga.status, reabertaEm: new Date().toLocaleDateString('pt-BR') };
+            if (vaga.status === 'fechada') {
+                if (vaga.candidatoAprovado)  mov.candidatoAprovado  = vaga.candidatoAprovado;
+                if (vaga.dataInicio)         mov.dataInicio         = vaga.dataInicio;
+                if (vaga.dataFechamento)     mov.dataFechamento     = vaga.dataFechamento;
+                if (vaga.observacoes)        mov.observacoes        = vaga.observacoes;
+            } else {
+                if (vaga.motivoCancelamento) mov.motivoCancelamento = vaga.motivoCancelamento;
+                if (vaga.dataCancelamento)   mov.dataCancelamento   = vaga.dataCancelamento;
+                if (vaga.observacoes)        mov.observacoes        = vaga.observacoes;
+            }
+            if (!vaga.movimentacoes) vaga.movimentacoes = [];
+            vaga.movimentacoes.push(mov);
+
+            // Reabrir — limpar campos de fechamento/cancelamento
+            vaga.status             = 'ativo';
+            vaga.dataFechamento     = null;
+            vaga.dataCancelamento   = null;
+            vaga.candidatoAprovado  = null;
+            vaga.dataInicio         = null;
+            vaga.motivoCancelamento = null;
+            vaga.observacoes        = null;
             delete vaga._pendingStatus;
+
             renderCards();
             renderHistory();
         }
