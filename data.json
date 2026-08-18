@@ -1,6 +1,6 @@
 {
   "semana": "18 de agosto de 2026",
-  "lastUpdated": "2026-08-18T19:21:41.201Z",
+  "lastUpdated": "2026-08-18T19:35:00.404Z",
   "vagas": [
     {
       "id": "5775",
@@ -136,8 +136,8 @@
       "estagio": "Aprovada por TA",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Wender",
-      "pipeline": "Briefing em agendamento",
-      "proximoPasso": "Alinhamento em agendamento + revisão de contexto e pipeline em andamento para início da atuação na vaga.",
+      "pipeline": "Briefing agendado para 18/08",
+      "proximoPasso": "Alinhamento em andamento + revisão de contexto e pipeline para início da atuação na vaga.",
       "risco": null,
       "status": "ativo"
     }
