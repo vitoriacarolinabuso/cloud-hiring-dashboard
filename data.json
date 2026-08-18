@@ -1,6 +1,6 @@
 {
   "semana": "18 de agosto de 2026",
-  "lastUpdated": "2026-08-18T17:11:25.561Z",
+  "lastUpdated": "2026-08-18T19:19:33.290Z",
   "vagas": [
     {
       "id": "5775",
@@ -10,8 +10,8 @@
       "estagio": "Avaliação Técnica",
       "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Charles",
-      "pipeline": "5 ativos | 1 em standy by após SankherUP + 3 em etapa de mapeamento comportamental e background check + 1 em entrevista Charles",
-      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. \n3 candidatos no funil de Talent com Assesment: Márcio Caetano, Tiago Neves e Henrique Diniz. Tiago Valentin reprovado na etapa técnica. Candidato Vitória para Pleno (Jeferson) sendo avaliado na etapa com liderança, considerado para uma possível cadeira de Sênior. 2 candidatos em avaliação técnica.",
+      "pipeline": "2 ativos | 1 em standy by após SankherUP",
+      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. 2 candidatos aprovados por Charles, em etapa SankherUP - Márcio e Tiago Neves. Previsibilidade de definição, amanhã, 19/08.",
       "risco": null,
       "status": "ativo"
     },
@@ -89,8 +89,8 @@
       "estagio": "Hunting",
       "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Arthur",
-      "pipeline": "Etapa de Entrevistas TA",
-      "proximoPasso": "Briefing realizado (24/07) com a Day. Mapeamento ativo iniciado. Perfis mapeados passando por avaliação de Talent. 1 talento potencial pré-aprovado abordado retornou com interesse e está em entrevista de Talent - Ricardo Melara (trabalhou com o Bruno Ledesma), será entrevistado na próxima quinta 13/08.",
+      "pipeline": "Etapa de Entrevistas com liderança",
+      "proximoPasso": "Briefing realizado (24/07) com a Day. Mapeamento ativo iniciado. Perfis mapeados passando por avaliação de Talent. 1 talento potencial pré-aprovado abordado retornou com interesse e está em entrevista de Talent - Ricardo Melara (trabalhou com o Bruno Ledesma), será entrevistado na próxima quinta 13/08. 1 perfil em avaliação com a liderança - Ricardo Melara. Aguardando devolutiva Arthur para avançarmos ;)",
       "risco": "Candidatos de mercado estão com expectativas salariais acima de 20k",
       "status": "ativo"
     },
@@ -136,8 +136,8 @@
       "estagio": "Aprovada por TA",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Wender",
-      "pipeline": "Briefing Agendado",
-      "proximoPasso": "Alinhamento agendado para 18/08.",
+      "pipeline": "Briefing em agendamento",
+      "proximoPasso": "Alinhamento em agendamento + revisão de contexto e pipeline em andamento para início da atuação na vaga.",
       "risco": null,
       "status": "ativo"
     }
