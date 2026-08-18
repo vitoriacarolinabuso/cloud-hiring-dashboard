@@ -1,13 +1,13 @@
 {
   "semana": "18 de agosto de 2026",
-  "lastUpdated": "2026-08-18T19:19:33.290Z",
+  "lastUpdated": "2026-08-18T19:21:41.201Z",
   "vagas": [
     {
       "id": "5775",
       "numero": "5775",
       "nome": "DBA Specialist",
       "badge": "yellow",
-      "estagio": "Avaliação Técnica",
+      "estagio": "SankherUP",
       "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Charles",
       "pipeline": "2 ativos | 1 em standy by após SankherUP",
@@ -86,7 +86,7 @@
       "numero": "2516",
       "nome": "Sales Engineer Specialist",
       "badge": "yellow",
-      "estagio": "Hunting",
+      "estagio": "Entrevista com Liderança",
       "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Arthur",
       "pipeline": "Etapa de Entrevistas com liderança",
