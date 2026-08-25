@@ -1,6 +1,6 @@
 {
   "semana": "25 de agosto de 2026",
-  "lastUpdated": "2026-08-25T18:28:13.549Z",
+  "lastUpdated": "2026-08-25T18:28:27.636Z",
   "vagas": [
     {
       "id": "5775",
@@ -95,7 +95,7 @@
       "lider": "Arthur",
       "pipeline": "Offer",
       "proximoPasso": "Offer realizada em 25/08 - Ricardo Melara. Prazo para aceite formal: 26/08.",
-      "risco": "Candidatos de mercado estão com expectativas salariais acima de 20k",
+      "risco": null,
       "status": "ativo"
     },
     {
