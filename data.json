@@ -1,6 +1,6 @@
 {
   "semana": "25 de agosto de 2026",
-  "lastUpdated": "2026-08-25T18:23:09.742Z",
+  "lastUpdated": "2026-08-25T18:26:34.794Z",
   "vagas": [
     {
       "id": "5775",
@@ -10,10 +10,14 @@
       "estagio": "SankherUP",
       "recrutadora": "Natalia Kelly Aguiar",
       "lider": "Charles",
-      "pipeline": "2 ativos | 1 em standy by após SankherUP",
-      "proximoPasso": "Rodrigo em standy by após ressalvas no SankherUP. 2 candidatos aprovados por Charles, em etapa SankherUP - Márcio e Tiago Neves. Previsibilidade de definição, amanhã, 19/08.",
+      "pipeline": "Vaga Fechada",
+      "proximoPasso": "Vaga fechada com Márcio Caetano - início previsto 08/09.",
       "risco": null,
-      "status": "ativo"
+      "status": "fechada",
+      "candidatoAprovado": "Márcio Caetano",
+      "dataInicio": "08/09/2026",
+      "observacoes": null,
+      "dataFechamento": "25/08/2026"
     },
     {
       "id": "5741",
