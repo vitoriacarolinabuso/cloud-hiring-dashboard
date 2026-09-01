@@ -1,6 +1,6 @@
 {
-  "semana": "25 de agosto de 2026",
-  "lastUpdated": "2026-08-25T18:42:26.789Z",
+  "semana": "1 de setembro de 2026",
+  "lastUpdated": "2026-09-01T17:59:26.069Z",
   "vagas": [
     {
       "id": "5775",
@@ -96,7 +96,11 @@
       "pipeline": "Offer",
       "proximoPasso": "Offer realizada em 25/08 - Ricardo Melara. Prazo para aceite formal: 26/08.",
       "risco": null,
-      "status": "ativo"
+      "status": "fechada",
+      "candidatoAprovado": "Ricardo Melara",
+      "dataInicio": "08/09/2026",
+      "observacoes": null,
+      "dataFechamento": "01/09/2026"
     },
     {
       "id": "v1786469886383",
