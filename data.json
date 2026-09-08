@@ -1,6 +1,6 @@
 {
-  "semana": "1 de setembro de 2026",
-  "lastUpdated": "2026-09-01T18:07:48.069Z",
+  "semana": "8 de setembro de 2026",
+  "lastUpdated": "2026-09-08T19:33:47.431Z",
   "vagas": [
     {
       "id": "5775",
@@ -140,12 +140,12 @@
       "id": "v1786483602274",
       "numero": "5904",
       "nome": "DEVOPS ENGINEER II",
-      "badge": "red",
-      "estagio": "Entrevista TA",
+      "badge": "yellow",
+      "estagio": "Entrevista Técnica com o Líder",
       "recrutadora": "Ketlin Sales Pereira",
       "lider": "Wender",
-      "pipeline": "Aguardando",
-      "proximoPasso": "Dois candidatos foram encaminhados para a validação do Wender (aprovados, porém em standby).\n\nO Wender sugeriu que a vaga seja preenchida por um profissional interno (Victor Uehara). O Wender informou que o Arthur  irá conversar com o Wesley e com o João Rafael, gestor/TL do profissional.\n\nAguardando os próximos trâmites para definir se seguiremos com o processo de recrutamento interno ou com o agendamento de entrevistas com os dois perfis enviados por TA para o Wender.",
+      "pipeline": "2 Candidatos agendados",
+      "proximoPasso": "Dois candidatos foram agendados para a etapa de bate-papo com o Wender, que acontecerá na quinta-feira (10/09).  TA está em fase de validação de novos perfis para apresentar.",
       "risco": null,
       "status": "ativo"
     }
